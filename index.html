@@ -8,13 +8,27 @@
   <title>Grover Lab — Find the key</title>
   <style>
 :root{--ink:#182f48;--muted:#5a6c7e;--page:#f0f4f6;--panel:#fff;--line:#dce5e9;--teal:#087d79;--teal-soft:#e7f5f1;--purple:#744abd;--purple-soft:#f1eafa;--orange:#b65313;--gold:#fff2d8;--radius:18px;--shadow:0 5px 24px #18334806;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--page);font-synthesis:none}
-*{box-sizing:border-box}body{margin:0;font-size:15px;line-height:1.55}button,input,select{font:inherit}button,select,input[type=range]{cursor:pointer}button{color:inherit}button:disabled,input:disabled{cursor:not-allowed;opacity:.5}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,.matrix-scroll:focus-visible{outline:3px solid #efb350;outline-offset:3px}h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.2;letter-spacing:-.035em}h1{font-size:clamp(34px,5vw,54px);font-weight:750}h2{font-size:24px}h3{font-size:19px}p{margin-top:12px}strong{font-weight:700}select{border:1px solid #bfcfd6;background:#fff;border-radius:8px;padding:7px 30px 7px 11px;color:var(--ink);min-height:40px}label{font-weight:600}sub,sup{font-size:.75em}button{touch-action:manipulation}svg{display:block;width:100%;height:auto}.container{max-width:1160px;padding:0 26px;margin:0 auto}.hero{color:#fff;background:#12243a;padding:40px 0 43px}.hero-inner{display:flex;justify-content:space-between;gap:50px;align-items:center}.hero h1 span{color:#9fe0d2}.hero p{max-width:660px;color:#c4d2df;font-size:17px;margin-top:17px}.eyebrow{font-size:11px;font-weight:750;letter-spacing:.14em;color:var(--teal);margin-bottom:10px}.hero .eyebrow{color:#b9d0df;display:flex;gap:10px;align-items:center;margin-bottom:18px}.brand-mark{display:inline-flex;align-items:center;justify-content:center;border:1px solid #9fe0d2;border-radius:50%;font-size:15px;color:#9fe0d2;width:29px;height:29px;letter-spacing:0}.hero-note{min-width:235px;padding:23px 26px;background:#ffffff08;border:1px solid #ffffff20;border-radius:16px;display:flex;flex-direction:column}.hero-note strong{font-size:18px}.hero-note span{color:#b7cbd9;font-size:13px;margin:2px 0 14px}.ideal-tag{border-top:1px solid #ffffff20;padding-top:14px;color:#a6d6cc;font-size:11px;font-weight:600}.panel{margin-top:24px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}.setup{display:grid;grid-template-columns:1fr 1.1fr;gap:18px 32px;margin-top:28px}.setup p{max-width:450px}.rule-controls{display:flex;gap:12px;align-items:center;justify-content:flex-end;flex-wrap:wrap}.rule-controls label{font-size:13px}.rule-controls select{margin-left:5px;font-size:18px;font-weight:700}.and-label{font-size:10px;color:var(--muted);font-weight:800}.rule-controls .formula{flex-basis:100%;text-align:right}.setup-note{grid-column:1/-1;max-width:none!important;margin:0!important}.small{font-size:12px;color:var(--muted);line-height:1.55}.section-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:18px}.section-top .eyebrow{margin-bottom:7px}.section-top label{font-size:13px}.button{display:inline-flex;gap:8px;align-items:center;justify-content:center;border:1px solid transparent;padding:10px 15px;min-height:43px;border-radius:9px;font-weight:650;font-size:13px;line-height:1.35}.primary{color:#fff;background:var(--teal)}.primary:hover:not(:disabled){background:#066962}.secondary{background:var(--teal-soft);color:#066a63;border-color:#badcd2}.secondary:hover:not(:disabled){background:#daf0e8}.subtle{background:#f6f8f9;border-color:var(--line);color:var(--muted)}.subtle:hover:not(:disabled){background:#eaf0f3}.phase-groups{display:grid;grid-template-columns:2fr 3fr 1fr;margin-left:calc(100% / 7);gap:7px;margin-bottom:7px;text-align:center;color:var(--muted);font-size:11px;font-weight:700}.phase-groups span:nth-child(2){color:var(--purple)}.stage-nav{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.stage-nav button{border:1px solid var(--line);padding:10px 5px;border-radius:9px;background:#f8fafb;font-size:12px;font-weight:600;line-height:1.2;min-height:54px}.stage-nav button .step-number{display:block;font-size:10px;color:var(--muted);margin-bottom:5px}.stage-nav button.oracle-step{background:#faf7fe;border-color:#e4d9f4}.stage-nav button[aria-current=step]{border-color:var(--teal);box-shadow:inset 0 0 0 1px var(--teal);background:var(--teal-soft)}.stage-nav button.oracle-step[aria-current=step]{border-color:var(--purple);box-shadow:inset 0 0 0 1px var(--purple);background:var(--purple-soft)}.stage-description{display:flex;gap:24px;align-items:center;justify-content:space-between;background:#f7f9fb;border-radius:12px;padding:20px;margin-top:20px;min-height:150px}.stage-description>div:first-child{max-width:690px}.stage-description h3{margin-top:7px}.stage-description p{font-size:14px;margin-top:8px}.pill{display:inline-flex;background:#edf3f6;color:#496276;font-size:11px;font-weight:750;padding:4px 9px;border-radius:20px;white-space:nowrap}.step-controls{display:flex;gap:7px;flex-shrink:0}.circuit-frame{overflow-x:auto;margin-top:18px}.circuit-frame svg{min-width:640px}.circuit-wire{stroke:#aebfcd;stroke-width:2}.circuit-label{fill:var(--ink);font-size:13px;font-weight:700}.circuit-bit{fill:var(--teal);font-size:12px}.circuit-gate rect{fill:#fff;stroke:#adbfc8;stroke-width:1.5}.circuit-gate text{fill:var(--ink);font-size:14px;text-anchor:middle}.circuit-gate.active rect{fill:var(--teal-soft);stroke:var(--teal);stroke-width:2.5}.circuit-gate.oracle.active rect{fill:var(--purple-soft);stroke:var(--purple)}.circuit-small{font-size:10px!important;fill:var(--muted)!important}.roles-note{margin-top:15px;font-size:13px;background:#f5f1fa;border-left:3px solid #a88bd3;padding:12px 15px;border-radius:0 8px 8px 0}.state-heading{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-top:25px}.candidate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:16px}.candidate-card{border:1px solid var(--line);background:#fff;border-radius:13px;padding:15px;position:relative;text-align:left;transition:border-color .15s,background .15s}.candidate-card:hover{border-color:#6baea1}.candidate-card[aria-pressed=true]{border-color:var(--teal);box-shadow:0 0 0 2px #087d7920;background:#fafefd}.candidate-card .key-header{display:flex;align-items:center;justify-content:space-between;gap:10px}.key-label{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:26px;font-weight:750}.helper-tag{font-size:10px;color:var(--muted);background:#edf2f5;border-radius:4px;padding:3px 7px}.helper-tag.one{color:var(--purple);background:var(--purple-soft)}.amplitude-drawing{display:block;height:50px;margin:12px 0 8px}.amplitude-drawing svg{height:50px}.amp-label{font-size:12px;display:flex;justify-content:space-between;gap:8px}.amp-label strong{color:var(--teal)}.candidate-card.negative .amp-label strong{color:var(--purple)}.probability-track{display:block;height:7px;border-radius:4px;background:#edf2f4;margin:12px 0 6px;overflow:hidden}.probability-track span{display:block;background:var(--teal);height:100%;border-radius:4px;transition:width .2s}.probability-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}.probability-label strong{color:var(--ink)}.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:13px}.legend>span{display:flex;align-items:center;gap:5px}.dot{width:7px;height:7px;border-radius:50%;display:inline-block}.dot.positive{background:var(--teal)}.dot.negative{background:var(--purple)}.notice{background:#edf5f7;color:#315466;border-radius:9px;padding:13px 15px;font-size:13px;margin-top:18px;line-height:1.55}.notice strong{color:#163e53}.two-column{display:grid;grid-template-columns:1fr 1fr;gap:22px}.two-column .panel{min-width:0}.selected-key{display:flex;justify-content:space-between;align-items:center;margin:18px 0 12px;padding:14px 17px;background:#f7f9fb;border-radius:10px}.selected-key .key-label{font-size:28px}.condition-checks{display:grid;grid-template-columns:1fr 1fr;gap:8px}.condition{border:1px solid var(--line);border-radius:9px;padding:10px;font-size:12px;background:#fafbfc}.condition strong{display:block;font-size:15px;margin-top:3px}.condition.pass{background:var(--teal-soft);border-color:#beddd4}.condition.fail{background:#faf5ef;border-color:#ecd8c4}.condition .check-result{font-weight:700;margin-top:5px;color:var(--muted)}.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:15px;line-height:1.7;overflow-wrap:anywhere}.formula.large{font-size:19px;margin:16px 0}.feedback{min-height:43px;font-size:13px;margin-top:12px;color:var(--muted)}.feedback.success{color:#086455}.feedback.retry{color:var(--orange)}.table-wrap{overflow-x:auto;margin-top:7px}.truth-table{border-collapse:collapse;width:100%;font-size:12px}.truth-table caption{text-align:left;color:var(--muted);font-size:11px;margin-bottom:9px}.truth-table th,.truth-table td{text-align:center;padding:7px 6px;border-bottom:1px solid var(--line)}.truth-table th{font-weight:650;color:var(--muted)}.truth-table tr.selected{background:var(--teal-soft)}.truth-table tbody tr{cursor:pointer}.truth-table td:first-child button{border:0;background:none;font:inherit;font-weight:700;width:100%;padding:3px}.status-fit{color:#087168;font-weight:750}.checker-chain{display:flex;gap:7px;margin-top:19px}.checker-chain>div{flex:1;border:1px solid var(--line);padding:9px;border-radius:8px;font-size:11px}.checker-chain strong,.checker-chain span{display:block}.checker-chain span{font-size:10px;color:var(--muted);margin-top:5px}.checker-chain .active{background:var(--purple-soft);border-color:#ba9cde}.score{border:1px solid #c1e1d6;padding:5px 11px;border-radius:20px;background:var(--teal-soft);color:#096958;font-size:13px;font-weight:750;white-space:nowrap}fieldset{padding:0;border:0;margin:16px 0 0}legend{font-weight:700;font-size:14px;padding:0;margin-bottom:10px}.answer{display:block;width:100%;background:#fafcfd;border:1px solid var(--line);text-align:left;border-radius:8px;padding:11px 12px;line-height:1.45;margin:7px 0;font-size:13px}.answer:hover{background:#f0f6f5;border-color:#9bc8b8}.answer.chosen.correct{background:var(--teal-soft);border-color:#9bc8b8}.answer.chosen.wrong{background:#fff5e9;border-color:#dfbe8d}.challenge-divider{border-top:1px solid var(--line);margin:15px 0 19px}.challenges>p{font-size:13px}.challenges>.formula{font-size:19px;margin-top:12px}.overbar{text-decoration:overline}.mirror-chart{margin-top:9px;min-height:225px}.mirror-chart svg{max-height:260px}.prediction-label{font-size:13px;display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:10px}.prediction-label output{margin-left:auto;font-family:ui-monospace,monospace;color:var(--teal);font-size:17px}input[type=range]{width:100%;accent-color:var(--teal);margin:12px 0 3px;min-height:24px}.range-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:14px}.button-row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.mirror-grid{stroke:#e5ecef;stroke-width:1}.mirror-axis{fill:var(--muted);font-size:10px}.mirror-key{fill:var(--ink);font-size:12px;font-family:ui-monospace,monospace}.mirror-bar-before{fill:#beb0d7}.mirror-bar-after{fill:var(--teal)}.mirror-mean{stroke:#b27723;stroke-width:1.5;stroke-dasharray:5 4}.mirror-zero{stroke:#adbbc5;stroke-width:1.5}.prediction-ring{fill:#fff;stroke:var(--teal);stroke-width:2.5}.waiting{border:1px dashed #cbd8df;border-radius:10px;background:#fafcfd;padding:20px;color:var(--muted);font-size:13px;margin-top:15px}.contribution-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}.contribution{border:1px solid var(--line);border-radius:10px;padding:13px;text-align:center;background:#fafcfd}.contribution small{display:block;color:var(--muted);font-size:11px}.contribution strong{display:block;font-size:22px;color:var(--teal);font-family:ui-monospace,monospace}.contribution.minus strong{color:var(--purple)}.contribution .formula{font-size:12px;margin:7px 0}.interference-result{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--teal-soft);padding:15px 18px;border-radius:10px;margin-top:13px}.interference-result .formula{font-size:19px}.wave-view{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;margin-top:16px}.wave-view svg{max-height:125px}.wave-view p{font-size:12px;color:var(--muted);margin:0}.basis-note{font-size:12px;color:var(--muted);background:#f5f8fa;padding:12px 15px;border-radius:8px}.basis-note span{font-family:ui-monospace,monospace;color:var(--ink)}.ket-state{margin:17px 0;font-size:17px}.math-instructions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:16px 0}.math-instructions label{font-size:13px}.matrix-scroll{overflow-x:auto;border:1px solid var(--line);background:#fcfdfe;border-radius:12px;padding:22px 18px}.matrix-equation{display:flex;align-items:center;gap:14px;min-width:820px;justify-content:center}.matrix-block{display:flex;flex-direction:column;gap:10px;align-items:center}.matrix-label{font-size:13px;font-weight:700;min-height:40px;display:flex;flex-direction:column;text-align:center;justify-content:center}.matrix-label small{font-size:10px;font-weight:500;color:var(--muted);display:block}.bracket{border-left:2px solid #6c8090;border-right:2px solid #6c8090;position:relative;padding:3px 7px}.bracket:before,.bracket:after{content:"";position:absolute;left:-2px;right:-2px;height:7px;border-left:2px solid #6c8090;border-right:2px solid #6c8090}.bracket:before{top:0;border-top:2px solid #6c8090}.bracket:after{bottom:0;border-bottom:2px solid #6c8090}.matrix-table{border-collapse:collapse;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px}.matrix-table td{height:32px;min-width:43px;text-align:center;padding:4px 5px}.matrix-table .zero{color:var(--muted)}.matrix-table tr.selected{background:#e5f2ed}.matrix-table td.used{color:#076859;font-weight:750}.vector-table td{min-width:52px;height:32px}.vector-table .basis-cell{font-size:10px;color:var(--muted);min-width:48px}.vector-table tr.selected{background:#e5f2ed}.input-vector td.used{background:#f5efd9;color:#66531e}.equation-symbol{font-size:23px;padding-top:40px;color:var(--muted)}.row-calculation{margin-top:17px;padding:18px;background:#f7fafb;border:1px solid var(--line);border-radius:10px}.row-calculation h3{font-size:16px}.dot-products{display:flex;gap:7px;align-items:stretch;flex-wrap:wrap;margin:12px 0}.dot-term{font-size:12px;background:#fff;border:1px solid var(--line);padding:7px 10px;border-radius:7px;font-family:ui-monospace,monospace}.dot-term small{display:block;font-family:inherit;color:var(--muted);font-size:10px;margin-bottom:3px}.dot-term.zero-term{color:var(--muted)}.row-calculation p{font-size:12px}.effective-math{margin-top:20px;border-top:1px solid var(--line);padding-top:17px}.effective-math summary{font-weight:650;font-size:14px;cursor:pointer}.effective-math>p{font-size:13px;color:var(--muted)}.effective-matrices{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:20px 0}.effective-matrices>div{background:#fafbfc;padding:14px;border:1px solid var(--line);border-radius:9px;text-align:center}.effective-matrices .bracket{display:inline-block;margin-top:12px}.effective-matrices h3{font-size:15px}.effective-matrices p{font-size:11px;color:var(--muted)}.effective-matrices td{min-width:38px}.experiment-options{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:20px 0}.experiment-options button{background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;text-align:left}.experiment-options strong{display:block;font-size:15px}.experiment-options span{display:block;font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5}.experiment-options .selected{background:var(--teal-soft);border-color:#71b59f;box-shadow:inset 0 0 0 1px #71b59f}.histogram{margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.hist-key{font-family:ui-monospace,monospace;font-size:19px;font-weight:700}.hist-track{height:12px;background:#edf2f4;border-radius:5px;margin:8px 0;overflow:hidden}.hist-track span{display:block;height:100%;background:#509985;border-radius:5px}.hist-info{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted)}.hist-info strong{color:var(--ink)}.expected{font-size:11px;color:var(--muted);margin-top:4px}footer{font-size:12px;color:var(--muted);padding:32px 7px 40px;text-align:center;line-height:1.7}footer span{display:block;margin-top:8px}.skip-link{position:fixed;top:10px;left:15px;background:#fff;padding:12px;z-index:10;opacity:0;pointer-events:none}.skip-link:focus{opacity:1;pointer-events:auto}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-@media(min-width:1400px){.container{max-width:1230px}.matrix-table td{min-width:48px}.matrix-equation{gap:22px}}
+*{box-sizing:border-box}body{margin:0;font-size:15px;line-height:1.55}button,input,select{font:inherit}button,select,input[type=range]{cursor:pointer}button{color:inherit}button:disabled,input:disabled{cursor:not-allowed;opacity:.5}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,.matrix-scroll:focus-visible{outline:3px solid #efb350;outline-offset:3px}h1,h2,h3,p{margin:0}h1,h2,h3{line-height:1.2;letter-spacing:-.035em}h1{font-size:clamp(34px,5vw,54px);font-weight:750}h2{font-size:24px}h3{font-size:19px}p{margin-top:12px}strong{font-weight:700}select{border:1px solid #bfcfd6;background:#fff;border-radius:8px;padding:7px 30px 7px 11px;color:var(--ink);min-height:40px}label{font-weight:600}sub,sup{font-size:.75em}button{touch-action:manipulation}svg{display:block;width:100%;height:auto}.container{max-width:1160px;padding:0 26px;margin:0 auto}.hero{color:#fff;background:#12243a;padding:40px 0 43px}.hero-inner{display:flex;justify-content:space-between;gap:50px;align-items:center}.hero h1 span{color:#9fe0d2}.hero p{max-width:660px;color:#c4d2df;font-size:17px;margin-top:17px}.eyebrow{font-size:11px;font-weight:750;letter-spacing:.14em;color:var(--teal);margin-bottom:10px}.hero .eyebrow{color:#b9d0df;display:flex;gap:10px;align-items:center;margin-bottom:18px}.brand-mark{display:inline-flex;align-items:center;justify-content:center;border:1px solid #9fe0d2;border-radius:50%;font-size:15px;color:#9fe0d2;width:29px;height:29px;letter-spacing:0}.hero-note{min-width:235px;padding:23px 26px;background:#ffffff08;border:1px solid #ffffff20;border-radius:16px;display:flex;flex-direction:column}.hero-note strong{font-size:18px}.hero-note span{color:#b7cbd9;font-size:13px;margin:2px 0 14px}.ideal-tag{border-top:1px solid #ffffff20;padding-top:14px;color:#a6d6cc;font-size:11px;font-weight:600}.panel{margin-top:24px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow)}.setup{display:grid;grid-template-columns:1fr 1.1fr;gap:18px 32px;margin-top:28px}.setup p{max-width:450px}.rule-controls{display:flex;gap:12px;align-items:center;justify-content:flex-end;flex-wrap:wrap}.rule-controls label{font-size:13px}.rule-controls select{margin-left:5px;font-size:18px;font-weight:700}.and-label{font-size:10px;color:var(--muted);font-weight:800}.rule-controls .formula{flex-basis:100%;text-align:right}.setup-note{grid-column:1/-1;max-width:none!important;margin:0!important}.small{font-size:12px;color:var(--muted);line-height:1.55}.section-top{display:flex;justify-content:space-between;align-items:center;gap:15px;margin-bottom:18px}.section-top .eyebrow{margin-bottom:7px}.section-top label{font-size:13px}.button{display:inline-flex;gap:8px;align-items:center;justify-content:center;border:1px solid transparent;padding:10px 15px;min-height:43px;border-radius:9px;font-weight:650;font-size:13px;line-height:1.35}.primary{color:#fff;background:var(--teal)}.primary:hover:not(:disabled){background:#066962}.secondary{background:var(--teal-soft);color:#066a63;border-color:#badcd2}.secondary:hover:not(:disabled){background:#daf0e8}.subtle{background:#f6f8f9;border-color:var(--line);color:var(--muted)}.subtle:hover:not(:disabled){background:#eaf0f3}.phase-groups{display:grid;grid-template-columns:2fr 3fr 1fr;margin-left:calc(100% / 7);gap:7px;margin-bottom:7px;text-align:center;color:var(--muted);font-size:11px;font-weight:700}.phase-groups span:nth-child(2){color:var(--purple)}.stage-nav{display:grid;grid-template-columns:repeat(7,1fr);gap:7px}.stage-nav button{border:1px solid var(--line);padding:10px 5px;border-radius:9px;background:#f8fafb;font-size:12px;font-weight:600;line-height:1.2;min-height:54px}.stage-nav button .step-number{display:block;font-size:10px;color:var(--muted);margin-bottom:5px}.stage-nav button.oracle-step{background:#faf7fe;border-color:#e4d9f4}.stage-nav button[aria-current=step]{border-color:var(--teal);box-shadow:inset 0 0 0 1px var(--teal);background:var(--teal-soft)}.stage-nav button.oracle-step[aria-current=step]{border-color:var(--purple);box-shadow:inset 0 0 0 1px var(--purple);background:var(--purple-soft)}.stage-description{display:flex;gap:24px;align-items:center;justify-content:space-between;background:#f7f9fb;border-radius:12px;padding:20px;margin-top:20px;min-height:150px}.stage-description>div:first-child{max-width:690px}.stage-description h3{margin-top:7px}.stage-description p{font-size:14px;margin-top:8px}.pill{display:inline-flex;background:#edf3f6;color:#496276;font-size:11px;font-weight:750;padding:4px 9px;border-radius:20px;white-space:nowrap}.step-controls{display:flex;gap:7px;flex-shrink:0}.circuit-frame{overflow-x:auto;margin-top:18px}.circuit-frame svg{min-width:640px}.circuit-wire{stroke:#aebfcd;stroke-width:2}.circuit-label{fill:var(--ink);font-size:13px;font-weight:700}.circuit-bit{fill:var(--teal);font-size:12px}.circuit-gate rect{fill:#fff;stroke:#adbfc8;stroke-width:1.5}.circuit-gate text{fill:var(--ink);font-size:14px;text-anchor:middle}.circuit-gate.active rect{fill:var(--teal-soft);stroke:var(--teal);stroke-width:2.5}.circuit-gate.oracle.active rect{fill:var(--purple-soft);stroke:var(--purple)}.circuit-small{font-size:10px!important;fill:var(--muted)!important}.roles-note{margin-top:15px;font-size:13px;background:#f5f1fa;border-left:3px solid #a88bd3;padding:12px 15px;border-radius:0 8px 8px 0}.state-heading{display:flex;justify-content:space-between;gap:15px;align-items:center;margin-top:25px}.candidate-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-top:16px}.candidate-card{border:1px solid var(--line);background:#fff;border-radius:13px;padding:15px;position:relative;text-align:left;transition:border-color .15s,background .15s}.candidate-card:hover{border-color:#6baea1}.candidate-card[aria-pressed=true]{border-color:var(--teal);box-shadow:0 0 0 2px #087d7920;background:#fafefd}.candidate-card .key-header{display:flex;align-items:center;justify-content:space-between;gap:10px}.key-label{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:26px;font-weight:750}.helper-tag{font-size:10px;color:var(--muted);background:#edf2f5;border-radius:4px;padding:3px 7px}.helper-tag.one{color:var(--purple);background:var(--purple-soft)}.amplitude-drawing{display:block;height:50px;margin:12px 0 8px}.amplitude-drawing svg{height:50px}.amp-label{font-size:12px;display:flex;justify-content:space-between;gap:8px}.amp-label strong{color:var(--teal)}.candidate-card.negative .amp-label strong{color:var(--purple)}.probability-track{display:block;height:7px;border-radius:4px;background:#edf2f4;margin:12px 0 6px;overflow:hidden}.probability-track span{display:block;background:var(--teal);height:100%;border-radius:4px;transition:width .2s}.probability-label{display:flex;justify-content:space-between;gap:10px;color:var(--muted);font-size:12px}.probability-label strong{color:var(--ink)}.legend{display:flex;gap:18px;flex-wrap:wrap;font-size:11px;color:var(--muted);margin-top:13px}.legend>span{display:flex;align-items:center;gap:5px}.dot{width:7px;height:7px;border-radius:50%;display:inline-block}.dot.positive{background:var(--teal)}.dot.negative{background:var(--purple)}.notice{background:#edf5f7;color:#315466;border-radius:9px;padding:13px 15px;font-size:13px;margin-top:18px;line-height:1.55}.notice strong{color:#163e53}.two-column{display:grid;grid-template-columns:1fr 1fr;gap:22px}.two-column .panel{min-width:0}.selected-key{display:flex;justify-content:space-between;align-items:center;margin:18px 0 12px;padding:14px 17px;background:#f7f9fb;border-radius:10px}.selected-key .key-label{font-size:28px}.condition-checks{display:grid;grid-template-columns:1fr 1fr;gap:8px}.condition{border:1px solid var(--line);border-radius:9px;padding:10px;font-size:12px;background:#fafbfc}.condition strong{display:block;font-size:15px;margin-top:3px}.condition.pass{background:var(--teal-soft);border-color:#beddd4}.condition.fail{background:#faf5ef;border-color:#ecd8c4}.condition .check-result{font-weight:700;margin-top:5px;color:var(--muted)}.formula{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:15px;line-height:1.7;overflow-wrap:anywhere}.formula.large{font-size:19px;margin:16px 0}.feedback{min-height:43px;font-size:13px;margin-top:12px;color:var(--muted)}.feedback.success{color:#086455}.feedback.retry{color:var(--orange)}.table-wrap{overflow-x:auto;margin-top:7px}.truth-table{border-collapse:collapse;width:100%;font-size:12px}.truth-table caption{text-align:left;color:var(--muted);font-size:11px;margin-bottom:9px}.truth-table th,.truth-table td{text-align:center;padding:7px 6px;border-bottom:1px solid var(--line)}.truth-table th{font-weight:650;color:var(--muted)}.truth-table tr.selected{background:var(--teal-soft)}.truth-table tbody tr{cursor:pointer}.truth-table td:first-child button{border:0;background:none;font:inherit;font-weight:700;width:100%;padding:3px}.status-fit{color:#087168;font-weight:750}.checker-chain{display:flex;gap:7px;margin-top:19px}.checker-chain>div{flex:1;border:1px solid var(--line);padding:9px;border-radius:8px;font-size:11px}.checker-chain strong,.checker-chain span{display:block}.checker-chain span{font-size:10px;color:var(--muted);margin-top:5px}.checker-chain .active{background:var(--purple-soft);border-color:#ba9cde}.score{border:1px solid #c1e1d6;padding:5px 11px;border-radius:20px;background:var(--teal-soft);color:#096958;font-size:13px;font-weight:750;white-space:nowrap}fieldset{padding:0;border:0;margin:16px 0 0}legend{font-weight:700;font-size:14px;padding:0;margin-bottom:10px}.answer{display:block;width:100%;background:#fafcfd;border:1px solid var(--line);text-align:left;border-radius:8px;padding:11px 12px;line-height:1.45;margin:7px 0;font-size:13px}.answer:hover{background:#f0f6f5;border-color:#9bc8b8}.answer.chosen.correct{background:var(--teal-soft);border-color:#9bc8b8}.answer.chosen.wrong{background:#fff5e9;border-color:#dfbe8d}.challenge-divider{border-top:1px solid var(--line);margin:15px 0 19px}.challenges>p{font-size:13px}.challenges>.formula{font-size:19px;margin-top:12px}.overbar{text-decoration:overline}.mirror-chart{margin-top:9px;min-height:225px}.mirror-chart svg{max-height:260px}.prediction-label{font-size:13px;display:flex;gap:7px;align-items:center;flex-wrap:wrap;margin-top:10px}.prediction-label output{margin-left:auto;font-family:ui-monospace,monospace;color:var(--teal);font-size:17px}input[type=range]{width:100%;accent-color:var(--teal);margin:12px 0 3px;min-height:24px}.range-labels{display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-bottom:14px}.button-row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.mirror-grid{stroke:#e5ecef;stroke-width:1}.mirror-axis{fill:var(--muted);font-size:10px}.mirror-key{fill:var(--ink);font-size:12px;font-family:ui-monospace,monospace}.mirror-bar-before{fill:#beb0d7}.mirror-bar-after{fill:var(--teal)}.mirror-mean{stroke:#b27723;stroke-width:1.5;stroke-dasharray:5 4}.mirror-zero{stroke:#adbbc5;stroke-width:1.5}.prediction-ring{fill:#fff;stroke:var(--teal);stroke-width:2.5}.waiting{border:1px dashed #cbd8df;border-radius:10px;background:#fafcfd;padding:20px;color:var(--muted);font-size:13px;margin-top:15px}.contribution-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}.contribution{border:1px solid var(--line);border-radius:10px;padding:13px;text-align:center;background:#fafcfd}.contribution small{display:block;color:var(--muted);font-size:11px}.contribution strong{display:block;font-size:22px;color:var(--teal);font-family:ui-monospace,monospace}.contribution.minus strong{color:var(--purple)}.contribution .formula{font-size:12px;margin:7px 0}.interference-result{display:flex;align-items:center;justify-content:space-between;gap:20px;background:var(--teal-soft);padding:15px 18px;border-radius:10px;margin-top:13px}.interference-result .formula{font-size:19px}.wave-view{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:center;margin-top:16px}.wave-view svg{max-height:125px}.wave-view p{font-size:12px;color:var(--muted);margin:0}.basis-note{font-size:12px;color:var(--muted);background:#f5f8fa;padding:12px 15px;border-radius:8px}.basis-note span{font-family:ui-monospace,monospace;color:var(--ink)}.ket-state{margin:17px 0;font-size:17px}.math-instructions{display:flex;align-items:center;gap:18px;flex-wrap:wrap;margin:16px 0}.math-instructions label{font-size:13px}.matrix-scroll{overflow-x:auto;border:1px solid var(--line);background:#fcfdfe;border-radius:12px;padding:22px 18px}.matrix-equation{display:flex;align-items:center;gap:14px;min-width:820px;justify-content:center}.matrix-block{display:flex;flex-direction:column;gap:10px;align-items:center}.matrix-label{font-size:13px;font-weight:700;min-height:40px;display:flex;flex-direction:column;text-align:center;justify-content:center}.matrix-label small{font-size:10px;font-weight:500;color:var(--muted);display:block}.bracket{border-left:2px solid #6c8090;border-right:2px solid #6c8090;position:relative;padding:3px 7px}.bracket:before,.bracket:after{content:"";position:absolute;left:-2px;right:-2px;height:7px;border-left:2px solid #6c8090;border-right:2px solid #6c8090}.bracket:before{top:0;border-top:2px solid #6c8090}.bracket:after{bottom:0;border-bottom:2px solid #6c8090}.matrix-table{border-collapse:collapse;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:18px}.matrix-table td{height:42px;min-width:52px;text-align:center;padding:6px 8px;white-space:nowrap}.matrix-table .zero{color:var(--muted)}.matrix-table tr.selected{background:#e5f2ed}.matrix-table td.used{color:#076859;font-weight:750}.vector-table td{min-width:60px;height:42px}.vector-table .basis-cell{font-size:13px;color:var(--muted);min-width:62px}.vector-table tr.selected{background:#e5f2ed}.input-vector td.used{background:#f5efd9;color:#66531e}.equation-symbol{font-size:23px;padding-top:40px;color:var(--muted)}.row-calculation{margin-top:17px;padding:18px;background:#f7fafb;border:1px solid var(--line);border-radius:10px}.row-calculation h3{font-size:16px}.dot-products{display:flex;gap:7px;align-items:stretch;flex-wrap:wrap;margin:12px 0}.dot-term{font-size:16px;background:#fff;border:1px solid var(--line);padding:7px 10px;border-radius:7px;font-family:ui-monospace,monospace}.dot-term small{display:block;font-family:inherit;color:var(--muted);font-size:11px;margin-bottom:3px}.dot-term.zero-term{color:var(--muted)}.row-calculation p{font-size:12px}.effective-math{margin-top:20px;border-top:1px solid var(--line);padding-top:17px}.effective-math summary{font-weight:650;font-size:14px;cursor:pointer}.effective-math>p{font-size:13px;color:var(--muted)}.effective-matrices{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin:20px 0}.effective-matrices>div{background:#fafbfc;padding:14px;border:1px solid var(--line);border-radius:9px;text-align:center}.effective-matrices .bracket{display:inline-block;margin-top:12px}.effective-matrices h3{font-size:15px}.effective-matrices p{font-size:11px;color:var(--muted)}.effective-matrices td{min-width:38px}.experiment-options{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin:20px 0}.experiment-options button{background:#f8fafb;border:1px solid var(--line);border-radius:10px;padding:15px;text-align:left}.experiment-options strong{display:block;font-size:15px}.experiment-options span{display:block;font-size:11px;color:var(--muted);margin-top:5px;line-height:1.5}.experiment-options .selected{background:var(--teal-soft);border-color:#71b59f;box-shadow:inset 0 0 0 1px #71b59f}.histogram{margin-top:20px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}.hist-key{font-family:ui-monospace,monospace;font-size:19px;font-weight:700}.hist-track{height:12px;background:#edf2f4;border-radius:5px;margin:8px 0;overflow:hidden}.hist-track span{display:block;height:100%;background:#509985;border-radius:5px}.hist-info{display:flex;justify-content:space-between;gap:8px;font-size:12px;color:var(--muted)}.hist-info strong{color:var(--ink)}.expected{font-size:11px;color:var(--muted);margin-top:4px}footer{font-size:12px;color:var(--muted);padding:32px 7px 40px;text-align:center;line-height:1.7}footer span{display:block;margin-top:8px}.skip-link{position:fixed;top:10px;left:15px;background:#fff;padding:12px;z-index:10;opacity:0;pointer-events:none}.skip-link:focus{opacity:1;pointer-events:auto}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+@media(min-width:1400px){.container{max-width:1230px}.matrix-table td{min-width:54px}.matrix-equation{gap:22px}}
 @media(max-width:900px){.hero-inner{gap:24px}.hero-note{min-width:190px;padding:20px}.setup{grid-template-columns:1fr}.rule-controls{justify-content:flex-start}.rule-controls .formula{text-align:left}.stage-description{flex-direction:column;align-items:flex-start;min-height:0;gap:16px}.step-controls{align-self:flex-end}.two-column{grid-template-columns:1fr}.candidate-grid{gap:9px}.candidate-card{padding:12px}.wave-view{grid-template-columns:1fr}.effective-matrices{gap:9px}.matrix-equation{justify-content:flex-start}.checker-chain span{font-size:11px}}
 @media(max-width:600px){.container{padding:0 14px}.hero{padding:27px 0}.hero-inner{display:block}.hero h1{font-size:36px}.hero p{font-size:15px}.hero-note{margin-top:24px;display:grid;grid-template-columns:1fr 1fr;gap:2px 15px;padding:15px 18px}.hero-note strong{font-size:14px}.hero-note strong:nth-of-type(2){grid-column:2;grid-row:1}.hero-note span{margin-bottom:0;font-size:11px}.hero-note .ideal-tag{grid-column:1/-1;margin-top:12px;font-size:10px}.panel{padding:19px 15px;border-radius:14px;margin-top:18px}h2{font-size:21px}.setup{gap:16px}.rule-controls{gap:9px}.rule-controls label{font-size:12px}.rule-controls select{margin-left:4px;padding:5px 22px 5px 7px;min-height:36px}.section-top{align-items:flex-start}.section-top .button{padding:8px 10px;font-size:11px;min-height:37px}.stage-nav{gap:4px;grid-template-columns:repeat(7,minmax(0,1fr))}.stage-nav button{font-size:10px;padding:8px 3px;min-height:58px;overflow-wrap:normal}.stage-nav button .step-number{font-size:9px}.phase-groups{font-size:9px;gap:4px}.stage-description{padding:16px}.stage-description p{font-size:13px}.candidate-grid{grid-template-columns:repeat(2,1fr);gap:10px}.candidate-card{padding:14px}.legend{gap:9px;font-size:10px}.state-heading{align-items:flex-start}.state-heading h3{font-size:17px}.roles-note{font-size:12px}.condition-checks{gap:7px}.checker-chain{gap:5px}.checker-chain>div{padding:8px}.checker-chain strong{font-size:10px}.checker-chain span{font-size:9px}.mirror-chart{min-height:190px}.contribution-grid{grid-template-columns:repeat(2,1fr);gap:10px}.section-top label{font-size:11px}.section-top select{padding-left:8px;min-height:35px}.interference-result{display:block;padding:13px}.interference-result .formula{font-size:16px}.interference-result>div:last-child{margin-top:8px}.math-panel .section-top{display:block}.math-panel .section-top>.pill{margin-top:12px}.ket-state{font-size:14px}.matrix-scroll{padding:15px 12px}.effective-matrices{grid-template-columns:1fr}.effective-matrices>div{display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap}.effective-matrices .bracket{margin:0}.experiment-options{grid-template-columns:1fr;gap:8px}.experiment-options button{padding:12px}.experiment-options span{margin-top:3px}.histogram{grid-template-columns:repeat(2,1fr);gap:16px 20px}.hist-key{font-size:18px}.button-row .button{font-size:12px;padding:9px 12px}.truth-table{font-size:11px}.truth-table th,.truth-table td{padding:7px 4px}.prediction-label{font-size:12px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 @media print{.hero{background:#fff;color:var(--ink);padding:12px 0}.hero h1 span,.hero p,.hero .eyebrow{color:var(--ink)}.hero-note,.stage-nav,.step-controls,.rule-controls select,.button,.answer,.skip-link{display:none}.container{max-width:100%;padding:0}.panel{break-inside:avoid;box-shadow:none;margin-top:16px}.two-column{display:block}.matrix-scroll{overflow:visible}.matrix-equation{min-width:0;gap:8px}.matrix-table td{min-width:26px;font-size:9px}.effective-matrices{grid-template-columns:repeat(3,1fr)}body{background:#fff;font-size:12px}.hero h1{font-size:25px}footer{padding:20px}}
 
+.mirror-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:15px 0 4px}
+.mirror-controls label{font-size:13px}
+.mirror-controls select{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:17px;font-weight:700}
+.button[hidden]{display:none}
+
+/* Classroom clarity and readable mathematical fractions. */
+body{font-size:16px}.small{font-size:13px}.hero p{max-width:700px}.role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:20px 0}.role-grid>div{border:1px solid var(--line);border-radius:10px;background:#f8fafb;padding:15px}.role-grid p{font-size:14px;margin-top:5px}.navigation-note{margin-top:12px}.component-step{padding:16px;margin-top:14px;border:1px solid var(--line);border-radius:10px;background:#fafcfd}.component-step .formula{font-size:20px}.component-step p{font-size:13px;margin-top:5px}.entanglement-status{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}.entanglement-status>span{background:#f4f0fa;border:1px solid #e2d8ef;border-radius:8px;padding:8px 12px;font-size:13px}.concept-details{margin-top:16px;border-top:1px solid var(--line);padding-top:13px}.concept-details summary{font-weight:650;font-size:14px;cursor:pointer}.concept-details p{font-size:14px;margin-top:10px}.concept-details label{display:block;margin:12px 0;font-size:13px}.demo-state{font-size:22px;margin:14px 0}.matrix-table{font-size:22px}.matrix-table td{height:54px;min-width:54px;padding:7px 9px}.matrix-table th{font-family:ui-monospace,monospace;font-size:12px;font-weight:550;color:var(--muted);white-space:nowrap;padding:5px}.matrix-table thead th{height:28px}.vector-table .basis-cell{font-size:14px;min-width:70px}.vector-table td{height:54px}.matrix-equation{min-width:1080px;align-items:flex-start;gap:18px}.matrix-label{min-height:48px;font-size:15px}.matrix-label small{font-size:12px}.equation-symbol{padding-top:270px}.fraction{display:inline-flex;flex-direction:column;vertical-align:middle;align-items:center;line-height:1.05;font-size:.88em;min-width:.7em}.fraction>span:first-child{border-bottom:1px solid currentColor;padding:0 3px 3px}.fraction>span:last-child{padding:3px 3px 0}.math-number{white-space:nowrap}.dot-term{font-size:20px}.dot-term small{font-size:12px}.row-calculation p{font-size:14px}.effective-matrices td{min-width:42px;padding:6px}.effective-matrices .bracket{max-width:100%;overflow-x:auto}.effective-matrices p{font-size:13px}.proof-matrices{display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;margin:18px 0}.proof-matrices>div{overflow-x:auto}.proof-matrices h3{font-size:16px;margin-bottom:10px}.contribution .formula{font-size:18px}.wave-view p{font-size:13px}.truth-table{font-size:13px}.truth-table caption{font-size:12px}.mirror-axis{font-size:12px}.mirror-key{font-size:14px}.mirror-chart svg{max-height:310px}.stage-description p{font-size:15px}.basis-note{font-size:14px}.math-panel>.small{font-size:14px}.experiment-options span{font-size:13px}.amp-label,.probability-label{font-size:13px}.helper-tag{font-size:12px}.legend{font-size:12px}.truth-table button:focus-visible{outline-offset:-1px}.button[hidden]{display:none}.section-top label{flex-shrink:0}.mirror-controls{display:flex;align-items:center;gap:10px;margin-top:12px}.advanced-entanglement .formula{font-size:18px}.feedback{min-height:48px}.measurements .waiting{grid-column:1/-1}
+@media(max-width:900px){.effective-matrices{grid-template-columns:1fr}.effective-matrices>div{text-align:left}.role-grid{gap:10px}.section-top{flex-wrap:wrap}.equation-symbol{padding-top:270px}}
+@media(max-width:600px){.role-grid{grid-template-columns:1fr;gap:8px}.role-grid>div{padding:12px}.orientation p{font-size:14px}.component-step .formula{font-size:18px}.entanglement-status{gap:8px}.entanglement-status>span{font-size:12px}.stage-description p{font-size:14px}.truth-table{font-size:12px}.truth-table th,.truth-table td{padding:7px 3px}.contribution .formula{font-size:16px}.matrix-table td{height:54px}.matrix-table{font-size:22px}.mirror-chart{min-height:220px}.section-top label{flex-shrink:1}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;transition:none!important}}
+/* Match every matrix and vector row, including rows containing only zeros. */
+.matrix-table td,.vector-table td{height:64px;padding:5px 8px}.equation-symbol{padding-top:324px}
+.candidate-card .key-header{flex-wrap:wrap;gap:5px}.wave-view svg{max-height:170px}
+.legend > span[hidden]{display:none}
 </style>
 </head>
 <body>
@@ -35,16 +49,22 @@
   </header>
   <main class="container">
     <noscript><div class="notice">Enable JavaScript to run this interactive game.</div></noscript>
+    <section class="panel orientation" aria-labelledby="orientation-title">
+      <div class="eyebrow">START HERE</div><h2 id="orientation-title">Three qubits. Four possible search keys.</h2>
+      <div class="role-grid"><div><strong>A · first search qubit</strong><p>The left value in a key label.</p></div><div><strong>B · second search qubit</strong><p>The right value in a key label.</p></div><div><strong>h · helper qubit</strong><p>Temporary workspace for the check.</p></div></div>
+      <p>A <strong>component</strong> means a basis label together with its amplitude. For example, <span class="formula">½|101⟩</span> means amplitude ½ for the joint label A = 1, B = 0, h = 1. A superposition contains several such terms; it still uses the same three qubits.</p>
+      <p class="small">The cards below group joint components by their search label AB. Selecting a card inspects the simulator; it does not measure a qubit or choose the answer for the oracle.</p>
+    </section>
     <section class="panel setup" aria-labelledby="setup-title">
       <div>
         <div class="eyebrow">THE LOCK'S RULE</div>
         <h2 id="setup-title">What makes a key fit?</h2>
-        <p>The checker tests two conditions. It can verify a candidate without running a search first.</p>
+        <p>The circuit is built to test two conditions. It returns f(A,B) = 1 when both pass, and 0 otherwise. Knowing this test is how the oracle recognises a fit.</p>
       </div>
       <div class="rule-controls">
-        <label>First bit A must be <select id="required-a"><option value="1">1</option><option value="0">0</option></select></label>
+        <label>Required value of A: <select id="required-a"><option value="1">1</option><option value="0">0</option></select></label>
         <span class="and-label">AND</span>
-        <label>Second bit B must be <select id="required-b"><option value="0">0</option><option value="1">1</option></select></label>
+        <label>Required value of B: <select id="required-b"><option value="0">0</option><option value="1">1</option></select></label>
         <div id="rule-formula" class="formula"></div>
       </div>
       <p class="small setup-note">This tiny rule is easy to solve by eye. The goal is to understand verification and amplification. Changing the rule starts a new round.</p>
@@ -61,56 +81,66 @@
         <div><span id="step-badge" class="pill"></span><h3 id="stage-title"></h3><p id="stage-copy"></p></div>
         <div class="step-controls"><button id="back" class="button subtle" type="button">← Back</button><button id="next" class="button primary" type="button">Next step →</button></div>
       </div>
+      <p class="small navigation-note">Step buttons select snapshots of one run. Next guides you through them and pauses for a prediction before Boost.</p>
       <div class="circuit-frame"><div id="circuit"></div></div>
       <p id="circuit-caption" class="small"></p>
-      <div class="roles-note"><strong>The oracle is a circuit, not another qubit.</strong> A and B hold the search state. The helper h records the check temporarily. The shaded check–mark–clear operations together form the oracle.</div>
+      <div class="roles-note"><strong>The oracle is a circuit, not another qubit.</strong> A and B are the search register. h temporarily stores the check result. Check and Clear involve all three wires; Mark phase acts on h; Boost acts on A and B. The shaded check–mark–clear operations together form the oracle.</div>
 
       <div class="state-heading"><h3>The four possible keys</h3><span id="probability-total" class="small"></span></div>
-      <p class="small">These cards are four joint basis states of the <strong>same two search qubits</strong>. Select a card to inspect its component; this does not measure it.</p>
+      <p class="small">These are the four search labels of the <strong>same two search qubits</strong>. Each card also shows its helper label. In these snapshots, at most one helper value has nonzero amplitude for each search key.</p>
       <div id="candidate-cards" class="candidate-grid"></div>
-      <div class="legend"><span><i class="dot positive"></i> Positive amplitude</span><span><i class="dot negative"></i> Negative amplitude / phase π</span><span>Probability = amplitude magnitude squared</span></div>
+      <div class="legend"><span><i class="dot positive"></i> Positive amplitude</span><span id="negative-amplitude-legend" hidden><i class="dot negative"></i> Negative amplitude / phase π</span><span id="nonnegative-amplitude-note">No negative amplitudes in this step</span><span>Key probability = sum of squared joint amplitudes</span></div>
+      <p class="small">The arrows are signed amplitude number lines, not Bloch spheres or the directions of individual qubits. A minus sign means a relative phase of π (180°), not a negative probability.</p>
       <div id="state-insight" class="notice"></div>
+      <div id="component-step" class="component-step" aria-live="polite"></div>
+      <div id="entanglement-status" class="entanglement-status"></div>
+      <details class="concept-details"><summary>One helper wire, different helper values: how can that happen?</summary><div id="helper-concept"></div></details>
     </section>
 
     <div class="two-column">
       <section class="panel inspector" aria-labelledby="checker-title">
         <div class="eyebrow">OPEN THE ORACLE</div>
         <h2 id="checker-title">Watch the checker work</h2>
-        <p>The same rule applies to every component. The checker is built from that rule; it does not guess which key to mark.</p>
+        <p>The checker applies its encoded rule to the whole superposition without reading out a key. Inspect one label below to understand the rule. This inspection is a teaching view, not a loop that the quantum circuit performs.</p>
         <div id="selected-key" class="selected-key"></div>
         <div id="condition-checks" class="condition-checks"></div>
         <div id="substitution" class="formula large"></div>
         <button id="test-key" class="button secondary" type="button">Test this candidate classically</button>
         <p id="classical-result" class="feedback" aria-live="polite">Select a key card, then test its two bits.</p>
-        <div class="table-wrap"><table class="truth-table"><caption>One checker, four possible inputs</caption><thead><tr><th scope="col">Key AB</th><th scope="col">A fits?</th><th scope="col">B fits?</th><th scope="col">f(A,B)</th><th scope="col">Fit?</th></tr></thead><tbody id="truth-rows"></tbody></table></div>
+        <div class="table-wrap"><table class="truth-table"><caption>Select any key here — linked to the cards and key selectors</caption><thead><tr><th scope="col">Key AB</th><th scope="col">A fits?</th><th scope="col">B fits?</th><th scope="col">f(A,B)</th><th scope="col">Fit?</th><th scope="col">Current h label</th></tr></thead><tbody id="truth-rows"></tbody></table></div>
+        <p class="small">In the current h column, — means this key has zero amplitude in this snapshot.</p>
         <div class="checker-chain">
           <div id="chain-compute"><strong>1. Check</strong><span>h ← h ⊕ f(A,B)</span></div>
           <div id="chain-mark"><strong>2. Mark phase</strong><span>Z on h: multiply by (−1)<sup>h</sup></span></div>
-          <div id="chain-clear"><strong>3. Clear</strong><span>Undo the check; h returns to 0</span></div>
+          <div id="chain-clear"><strong>3. Clear</strong><span>Apply the same toggle again</span></div>
         </div>
         <p class="small">⊕ means XOR: when f = 1, toggle h; when f = 0, leave it alone. Applying the same toggle twice restores the original helper.</p>
         <p id="helper-explanation" class="notice"></p>
+        <details class="concept-details"><summary>Try the reversible check twice</summary><p>This mini demo follows one basis label. It does not alter the walkthrough above.</p><label>Starting helper value <select id="demo-helper"><option value="0">0</option><option value="1">1</option></select></label><div id="demo-check-state" class="formula demo-state"></div><div class="button-row"><button id="demo-check" class="button secondary" type="button">Apply one check</button><button id="demo-reset" class="button subtle" type="button">Start this demo again</button></div><p id="demo-check-message" class="small" aria-live="polite"></p></details>
         <p class="small">The coherent checker uses reversible logic. No candidate or helper is measured during the oracle. This helper-based implementation makes the mechanism visible; some phase-oracle circuits need no extra helper.</p>
       </section>
 
       <section class="panel challenges" aria-labelledby="challenge-title">
         <div class="section-top"><div><div class="eyebrow">PREDICT, THEN REVEAL</div><h2 id="challenge-title">Your lab challenges</h2></div><span id="score" class="score">0 / 5</span></div>
         <fieldset id="phase-question"><legend>What changes when the phase mark is applied?</legend>
-          <button class="answer" type="button" data-answer="phase">The matching component changes sign; key probabilities stay the same.</button>
+          <button id="phase-answer" class="answer" type="button" data-answer="phase">The matching component changes sign; key probabilities stay the same.</button>
           <button class="answer" type="button" data-answer="probability">The matching key immediately becomes 100% likely.</button>
-          <button class="answer" type="button" data-answer="all">Every key with first bit A = 1 changes sign.</button>
+          <button class="answer" type="button" data-answer="all">Every key whose A value is 1 changes sign.</button>
         </fieldset>
-        <p id="phase-feedback" class="feedback" aria-live="polite">Make a prediction before the “Mark phase” step.</p>
+        <p id="phase-feedback" class="feedback" aria-live="polite"></p>
+        <div class="button-row"><button id="apply-phase" class="button secondary" type="button">Apply Mark phase</button><button id="return-to-phase" class="button subtle" type="button" hidden>Return to Check to predict</button></div>
         <div class="challenge-divider"></div>
-        <h3>Predict the mirror reflection</h3>
+        <h3 id="reflection-title" tabindex="-1">Predict the mirror reflection (before the “Boost” step)</h3>
         <p>After the oracle, the diffuser reflects <em>each amplitude</em> around their mean. It uses the same rule for all four keys.</p>
         <div class="formula">a′<sub>x</sub> = 2<span class="overbar">a</span> − a<sub>x</sub></div>
+        <p class="small">aₓ is the input amplitude for key x; ā is the average of all four input amplitudes; a′ₓ is the output amplitude.</p>
         <p id="mirror-ready" class="small"></p>
+        <div class="mirror-controls"><label for="mirror-key">Key to predict</label><select id="mirror-key" aria-describedby="mirror-ready"><option value="00">00</option><option value="01">01</option><option value="10">10</option><option value="11">11</option></select></div>
         <div id="mirror-chart" class="mirror-chart"></div>
         <label class="prediction-label" for="prediction">Predicted output amplitude for <strong id="prediction-key"></strong><output id="prediction-value" for="prediction">0</output></label>
         <input id="prediction" type="range" min="-1" max="1" step="0.25" value="0">
         <div class="range-labels"><span>−1</span><span>0</span><span>+1</span></div>
-        <div class="button-row"><button id="check-prediction" class="button secondary" type="button">Check prediction</button><button id="reveal-boost" class="button primary" type="button">Apply the diffuser</button></div>
+        <div class="button-row"><button id="check-prediction" class="button secondary" type="button">Check prediction</button><button id="reveal-boost" class="button primary" type="button">Apply Boost and reveal</button><button id="return-to-prediction" class="button secondary" type="button" hidden>Return to prediction (Clear h)</button></div>
         <p id="reflection-feedback" class="feedback" aria-live="polite"></p>
         <p class="small">The hollow marker is your prediction, not the simulated quantum state. Score one point for the phase question and one for each key's correct reflection prediction.</p>
       </section>
@@ -118,32 +148,34 @@
 
     <section class="panel interference" aria-labelledby="interference-title">
       <div class="section-top"><div><div class="eyebrow">WHY THE BOOST WORKS</div><h2 id="interference-title">Four contributions, one output</h2></div><label>Inspect output <select id="interference-key"><option>00</option><option>01</option><option selected>10</option><option>11</option></select></label></div>
-      <p>The diffuser mixes amplitudes. Each input contributes a signed amount to the selected output. Matching signs reinforce; opposite signs cancel.</p>
+      <p>The diffuser mixes the four search amplitudes. For one output row, multiply each input amplitude by its matrix weight, then add the four products. Products with the same sign reinforce; positive and negative products can cancel.</p>
       <div id="interference-content"></div>
     </section>
 
     <section id="math-panel" class="panel math-panel" aria-labelledby="math-title">
       <div class="section-top"><div><div class="eyebrow">THE MATH UNDERNEATH</div><h2 id="math-title">The actual matrix and full state vector</h2></div><span class="pill">3 qubits · 8 components</span></div>
       <p id="math-description"></p>
-      <p class="basis-note">Basis order: <span>|000⟩, |001⟩, |010⟩, |011⟩, |100⟩, |101⟩, |110⟩, |111⟩</span>. The bits are <strong>A, B, h</strong>, with helper h on the right.</p>
-      <p class="small">⊗ combines operations on different wires. I leaves a wire unchanged; Z = diag(1, −1) changes phase. † denotes the inverse here. All amplitudes in this example are real.</p>
+      <p class="basis-note">Basis order: <span>|000⟩, |001⟩, |010⟩, |011⟩, |100⟩, |101⟩, |110⟩, |111⟩</span>. Each digit is a qubit’s basis value, ordered <strong>A, B, h</strong>. For example, |101⟩ labels A = 1, B = 0, h = 1. Eight labels are needed because 2³ = 8; zero entries are shown too.</p>
+      <p class="small">⊗ combines operations on different qubits. I is the identity (no change). Z = diag(1, −1) multiplies helper-0 amplitudes by +1 and helper-1 amplitudes by −1. † means conjugate transpose; for a unitary gate it is the inverse. This checker is its own inverse. All amplitudes here are real.</p>
       <div id="ket-state" class="formula ket-state"></div>
-      <div class="math-instructions"><label>Explore output row <select id="math-row"></select></label><span class="small">Select a basis row to inspect its dot product. On a small screen, scroll the matrix horizontally.</span></div>
+      <div class="math-instructions"><label>Explore output row <select id="math-row"></select></label><span class="small">Rows label output components; columns label input components. A row × the input vector gives one output amplitude. Scroll horizontally to see the whole equation.</span></div>
       <div class="matrix-scroll" tabindex="0" role="region" aria-label="Full matrix times input state equals output state"><div id="matrix-equation" class="matrix-equation"></div></div>
       <div id="row-calculation" class="row-calculation"></div>
       <p id="math-state-note" class="notice"></p>
+      <details class="concept-details advanced-entanglement"><summary>Why the entanglement statements are facts: the calculation</summary><div id="entanglement-math"></div></details>
       <details class="effective-math"><summary>Also see the 4 × 4 search-space matrices</summary><p>When the helper begins and ends in |0⟩, these matrices describe the search register alone. The oracle matrix represents the <em>complete</em> check–mark–clear sequence, not its intermediate steps.</p><div id="effective-matrices" class="effective-matrices"></div><div id="effective-state" class="formula"></div></details>
     </section>
 
     <section id="measurement-panel" class="panel measurements" aria-labelledby="measure-title">
       <div class="section-top"><div><div class="eyebrow">TEST IT WITH MEASUREMENTS</div><h2 id="measure-title">Does a phase flip alone help?</h2></div><button id="clear-trials" class="button subtle" type="button">Clear trials</button></div>
-      <p>Compare three experiments. Each trial prepares a <strong>fresh</strong> |00⟩ search state, runs the chosen sequence, then measures A and B once.</p>
+      <p>Compare three experiments. Each trial starts from <strong>fresh</strong> |000⟩, applies H to A and B, runs the chosen sequence, then measures the search register once. This panel opens after Boost and does not advance the walkthrough.</p>
       <div id="experiment-options" class="experiment-options">
-        <button type="button" data-mode="oracle"><strong>Oracle only</strong><span>Prepare → check → mark → clear → measure</span></button>
-        <button type="button" data-mode="skip"><strong>Skip the oracle</strong><span>Prepare → diffuse → measure</span></button>
-        <button type="button" data-mode="full" class="selected"><strong>Full Grover round</strong><span>Prepare → oracle → diffuse → measure</span></button>
+        <button type="button" data-mode="oracle"><strong>Oracle only</strong><span>H on A and B → check → mark → clear → measure AB</span></button>
+        <button type="button" data-mode="skip"><strong>Skip the oracle</strong><span>H on A and B → Boost → measure AB</span></button>
+        <button type="button" data-mode="full" class="selected"><strong>Full Grover round</strong><span>H on A and B → oracle → Boost → measure AB</span></button>
       </div>
       <div class="button-row"><button id="measure-one" class="button primary" type="button">Measure 1 fresh run</button><button id="measure-many" class="button secondary" type="button">Measure 100 fresh runs</button><span id="last-measurement" class="small" aria-live="polite"></span></div>
+      <p id="measurement-ready" class="small"></p>
       <div id="histogram" class="histogram"></div>
       <p id="trial-explanation" class="notice"></p>
       <p class="small">The probabilities are exact for this ideal four-key, one-solution model. Counts in the uniform experiments fluctuate randomly. A single quantum measurement reveals one key, not the full state vector.</p>
@@ -225,184 +257,205 @@
   const $ = id => document.getElementById(id);
   const KEYS = E.KEYS;
   const STAGES = [
-    { short: 'Start', title: 'Start with a definite key', operator: 'I₈', subtitle: 'Initial state', text: 'A = 0, B = 0, and helper h = 0. Only |00⟩ has a nonzero search amplitude. We have not created a superposition yet.' },
-    { short: 'H on A', title: 'One H gate: two joint possibilities', operator: 'H ⊗ I ⊗ I', subtitle: 'Hadamard on A', text: 'H turns A from |0⟩ into (|0⟩ + |1⟩)/√2. B and h stay 0. The joint state now contains |000⟩ and |100⟩, each with amplitude 1/√2.' },
-    { short: 'H on B', title: 'Two H gates: four possible keys', operator: 'I ⊗ H ⊗ I', subtitle: 'Hadamard on B', text: 'H on B splits each existing component into two. All four keys now have amplitude +½, giving probability (½)² = ¼ each. The helper is still 0.' },
-    { short: 'Check', title: 'Compute the check into a helper', operator: 'U_f', subtitle: 'Reversible checker', text: 'Apply |AB,h⟩ → |AB,h ⊕ f(A,B)⟩. Starting from h = 0, the helper becomes 1 only in the matching component. A and B keep their bits. This operation acts coherently on the whole superposition.' },
-    { short: 'Mark phase', title: 'A phase mark, not a probability boost', operator: 'I₄ ⊗ Z', subtitle: 'Z on helper h', text: 'Z multiplies each h = 1 component by −1 and leaves h = 0 components unchanged. Only the matching component has h = 1, so only it changes sign. Squaring the amplitude still gives 25%.' },
-    { short: 'Clear h', title: 'Undo the check; keep the phase', operator: 'U_f† = U_f', subtitle: 'Uncompute the checker', text: 'Apply the checker again. It resets h to 0 in every component, while the matching search amplitude stays negative. The helper is now separate from the search register. The oracle is complete.' },
-    { short: 'Boost', title: 'Reflect every amplitude around the mean', operator: 'D ⊗ I', subtitle: 'Diffuser on A and B', text: 'The mean search amplitude is ¼. Apply a′ = 2 × ¼ − a to each key: the marked −½ becomes +1, and each unmarked +½ becomes 0. The diffuser uses one rule for all keys; it does not check the lock.' }
+    { short: 'Start', title: 'Start with definite qubit values', operator: 'I₈', subtitle: 'Initial state' },
+    { short: 'H on A', title: 'One H gate: two joint possibilities', operator: 'H ⊗ I ⊗ I', subtitle: 'Hadamard on A' },
+    { short: 'H on B', title: 'Two H gates: four equal key amplitudes', operator: 'I ⊗ H ⊗ I', subtitle: 'Hadamard on B' },
+    { short: 'Check', title: 'Store the check result in the helper', operator: 'U_f', subtitle: 'Reversible checker' },
+    { short: 'Mark phase', title: 'Change a sign; keep the probabilities', operator: 'I₄ ⊗ Z', subtitle: 'Z on helper h' },
+    { short: 'Clear h', title: 'Undo the helper flag; keep the phase', operator: 'U_f† = U_f', subtitle: 'Uncompute the checker' },
+    { short: 'Boost', title: 'Interference changes the probabilities', operator: 'D ⊗ I', subtitle: 'Diffuser on A and B' }
   ];
   let model, stage = 0, selected = 0, mathRow = 0, prediction = 0, phaseAnswer = null;
   let phasePoint = false, reflectionPoints = new Set(), reflectionMessages = {}, classicalTest = null;
-  let mode = 'full', trials, lastResults;
+  let mode = 'full', trials, lastResults, demoHelper = 0, demoSteps = 0, demoMessage = '';
 
   function decimal(x, signed = false) {
-    const value = E.clean(x);
-    const abs = Math.abs(value);
+    const value = E.clean(x), abs = Math.abs(value);
     const text = Math.abs(abs - Math.SQRT1_2) < 1e-10 ? '0.7071…' : String(Math.round(abs * 10000) / 10000);
     return value < 0 ? `−${text}` : signed && value > 0 ? `+${text}` : text;
   }
   function exact(x, signed = false) {
     x = E.clean(x);
     const abs = Math.abs(x);
-    let value;
-    if (Math.abs(abs - Math.SQRT1_2) < 1e-10) value = '1/√2';
-    else if (Math.abs(abs - 0.5) < 1e-10) value = '½';
-    else if (Math.abs(abs - 0.25) < 1e-10) value = '¼';
-    else if (Math.abs(abs - 0.75) < 1e-10) value = '¾';
-    else value = decimal(abs);
+    const fractions = [[Math.SQRT1_2, '1/√2'], [0.5, '½'], [0.25, '¼'], [0.75, '¾'], [0.625, '⅝']];
+    const fraction = fractions.find(([v]) => Math.abs(abs - v) < 1e-10);
+    const value = fraction ? fraction[1] : decimal(abs);
     return x < 0 ? `−${value}` : signed && x > 0 ? `+${value}` : value;
   }
-  const percent = probability => `${Math.round(probability * 10000) / 100}%`;
+  function mathNumber(x, signed = false) {
+    const abs = Math.abs(E.clean(x));
+    const fractions = [[Math.SQRT1_2, '1', '√2'], [0.5, '1', '2'], [0.25, '1', '4'], [0.75, '3', '4'], [0.625, '5', '8']];
+    const fraction = fractions.find(([v]) => Math.abs(abs - v) < 1e-10);
+    const sign = x < -1e-12 ? '−' : signed && x > 1e-12 ? '+' : '';
+    return `<span class="math-number" aria-label="${exact(x, signed)}">${sign}${fraction ? `<span class="fraction" aria-hidden="true"><span>${fraction[1]}</span><span>${fraction[2]}</span></span>` : decimal(abs)}</span>`;
+  }
+  const percent = p => `${Math.round(p * 10000) / 100}%`;
   const ket = bits => `|${bits}⟩`;
-  function helperFor(k) { return (stage === 3 || stage === 4) && k === model.match ? 1 : 0; }
-  function amplitude(k) { return model.states[stage][k * 2 + helperFor(k)]; }
-  function searchMarked() { return model.states[5].filter((_, i) => i % 2 === 0); }
-  function factor(letter, required) { return required === 1 ? letter : `(1 − ${letter})`; }
-  function ruleText() { return `f(A, B) = ${factor('A', model.requiredA)} × ${factor('B', model.requiredB)}`; }
-  function mathInput() { return stage === 0 ? E.INITIAL : model.states[stage - 1]; }
-  function dotProduct(row, matrix, vector) { return matrix[row].map((weight, i) => E.clean(weight * vector[i])); }
+  const helperAt = (step, k) => (step === 3 || step === 4) && k === model.match ? 1 : 0;
+  const helperFor = k => helperAt(stage, k);
+  const amplitude = k => model.states[stage][k * 2 + helperFor(k)];
+  const searchMarked = () => model.states[5].filter((_, i) => i % 2 === 0);
+  const factor = (letter, required) => required === 1 ? letter : `(1 − ${letter})`;
+  const ruleText = () => `f(A, B) = ${factor('A', model.requiredA)} × ${factor('B', model.requiredB)}`;
+  const mathInput = () => stage === 0 ? E.INITIAL : model.states[stage - 1];
+  const dotProduct = (row, matrix, vector) => matrix[row].map((weight, i) => E.clean(weight * vector[i]));
   function preserveFocus(callback) {
     const id = document.activeElement && document.activeElement.id;
     callback();
     if (id && $(id) && document.activeElement.id !== id) $(id).focus({ preventScroll: true });
   }
+  function scrollTo(id, focusId = id) {
+    $(id).scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' });
+    $(focusId).focus({ preventScroll: true });
+  }
+  function resetDemo() {
+    demoHelper = Number($('demo-helper').value); demoSteps = 0; demoMessage = '';
+  }
   function resetRound() {
     model = E.build(Number($('required-a').value), Number($('required-b').value));
-    stage = 0; selected = 0; mathRow = 0; prediction = 0;
-    phaseAnswer = null; phasePoint = false; reflectionPoints = new Set(); reflectionMessages = {}; classicalTest = null;
+    stage = 0; selected = 0; mathRow = 0; prediction = 0; phaseAnswer = null; phasePoint = false;
+    reflectionPoints = new Set(); reflectionMessages = {}; classicalTest = null;
     trials = { oracle: [0, 0, 0, 0], skip: [0, 0, 0, 0], full: [0, 0, 0, 0] };
-    lastResults = { oracle: '', skip: '', full: '' };
-    $('prediction').value = '0';
-    renderAll();
+    lastResults = { oracle: '', skip: '', full: '' }; mode = 'full';
+    $('prediction').value = '0'; $('demo-helper').value = '0'; resetDemo(); renderAll();
   }
   function selectCandidate(k) {
-    selected = k; prediction = 0; classicalTest = null;
-    mathRow = k * 2 + helperFor(k);
-    $('prediction').value = '0';
-    renderAll();
+    if (!Number.isInteger(k) || k < 0 || k >= KEYS.length) return;
+    selected = k; prediction = 0; classicalTest = null; resetDemo();
+    mathRow = k * 2 + helperFor(k); $('prediction').value = '0'; renderAll();
   }
   function goTo(nextStage) {
-    stage = Math.max(0, Math.min(6, nextStage));
-    mathRow = selected * 2 + helperFor(selected);
-    renderAll();
+    stage = Math.max(0, Math.min(6, nextStage)); mathRow = selected * 2 + helperFor(selected); renderAll();
     $('live-announcement').textContent = `Step ${stage}: ${STAGES[stage].title}`;
   }
+  function stageCopy() {
+    return [
+      'A, B, and h are each in |0⟩. The full state is |000⟩: its amplitude is 1, and all seven other joint labels have amplitude 0.',
+      'H puts A into (|0⟩ + |1⟩)/√2. B and h remain in |0⟩. The two populated joint labels are |000⟩ and |100⟩, with amplitude 1/√2 each and probability ½ each.',
+      'H on B splits each existing term into two. The four search labels now have amplitude +½ each, so each key has probability |½|² = ¼ = 25%. This is a superposition; A and B are still independent at this step.',
+      `The rule returns f = 1 only for ${model.target}. The checker maps |AB,h⟩ to |AB,h ⊕ f(A,B)⟩. Within each basis label, the values of A and B are unchanged; only h can toggle. The helper flag now depends on the search label, so h is entangled with the joint register AB. No measurement occurs.`,
+      `Z acts on h: it multiplies a joint component’s amplitude by −1 when its helper label is 1, and by +1 when it is 0. Only ${model.target} has helper label 1. Its +½ amplitude becomes −½. The helper label stays 1, and |−½|² = ¼: a sign change has not increased the chance of that key.`,
+      `Run the checker again. In the matching term, h toggles from 1 to 0; in the other populated terms it stays 0 because f = 0. The matching amplitude remains −½. Now every populated term has the same helper state |0⟩, so h is independent of AB. It is still the third qubit. A and B remain entangled with each other.`,
+      `D reflects every search amplitude about the mean ¼: a′ = 2 × ¼ − a. The marked −½ becomes +1, and the three +½ inputs become 0. These changes come from adding matrix-weighted contributions. D is identical for every lock rule; it is not told which key fits.`
+    ][stage];
+  }
   function drawAmplitude(value) {
-    const colour = value < 0 ? '#744abd' : '#087d79';
-    const endpoint = 90 + value * 73;
+    const colour = value < 0 ? '#744abd' : '#087d79', endpoint = 90 + value * 73;
     const arrow = value === 0 ? '' : `<line x1="90" y1="25" x2="${endpoint}" y2="25" stroke="${colour}" stroke-width="4"/><path d="M ${endpoint - Math.sign(value) * 7} 20 L ${endpoint} 25 L ${endpoint - Math.sign(value) * 7} 30" fill="none" stroke="${colour}" stroke-width="3"/>`;
-    return `<svg viewBox="0 0 180 50" aria-hidden="true"><line x1="13" y1="25" x2="167" y2="25" stroke="#dbe4e9" stroke-width="2"/><line x1="90" y1="17" x2="90" y2="33" stroke="#94a9b6"/><circle cx="90" cy="25" r="3" fill="#94a9b6"/>${arrow}<text x="14" y="46" fill="#8699a7" font-size="9">−1</text><text x="87" y="46" fill="#8699a7" font-size="9">0</text><text x="154" y="46" fill="#8699a7" font-size="9">+1</text></svg>`;
+    return `<svg viewBox="0 0 180 50" aria-hidden="true"><line x1="13" y1="25" x2="167" y2="25" stroke="#dbe4e9" stroke-width="2"/><line x1="90" y1="17" x2="90" y2="33" stroke="#94a9b6"/><circle cx="90" cy="25" r="3" fill="#94a9b6"/>${arrow}<text x="14" y="46" fill="#657a89" font-size="11">−1</text><text x="87" y="46" fill="#657a89" font-size="11">0</text><text x="151" y="46" fill="#657a89" font-size="11">+1</text></svg>`;
   }
   function renderCircuit() {
-    const key = KEYS[selected], helper = helperFor(selected);
     const gate = (which, x, y, width, height, label, sublabel = '') => `<g class="circuit-gate ${which >= 3 && which <= 5 ? 'oracle' : ''} ${stage === which ? 'active' : ''}"><rect x="${x}" y="${y}" width="${width}" height="${height}" rx="7"/><text x="${x + width / 2}" y="${y + height / 2 + (sublabel ? -3 : 5)}">${label}</text>${sublabel ? `<text class="circuit-small" x="${x + width / 2}" y="${y + height / 2 + 15}">${sublabel}</text>` : ''}</g>`;
-    $('circuit').innerHTML = `<svg viewBox="0 0 780 183" role="img" aria-label="Circuit with search wires A and B, helper wire h, Hadamard gates, checker, helper Z, checker undo, and diffuser"><rect x="315" y="9" width="294" height="152" rx="12" fill="#f6f1fb"/><text x="462" y="22" text-anchor="middle" fill="#745599" font-size="10">ORACLE: reversible check + phase mark + clear</text>
-      <line class="circuit-wire" x1="127" y1="53" x2="761" y2="53"/><line class="circuit-wire" x1="127" y1="96" x2="761" y2="96"/><line class="circuit-wire" x1="127" y1="139" x2="761" y2="139"/>
-      <text class="circuit-label" x="8" y="56">A · first bit</text><text class="circuit-bit" x="114" y="56">${key[0]}</text><text class="circuit-label" x="8" y="99">B · second bit</text><text class="circuit-bit" x="114" y="99">${key[1]}</text><text class="circuit-label" x="8" y="142">h · helper</text><text class="circuit-bit" x="114" y="142">${helper}</text>
-      ${gate(1, 174, 36, 40, 34, 'H')}${gate(2, 252, 79, 40, 34, 'H')}${gate(3, 333, 36, 75, 119, 'U_f', 'check')}${gate(4, 445, 122, 36, 34, 'Z')}${gate(5, 519, 36, 75, 119, 'U_f†', 'clear')}${gate(6, 650, 36, 83, 77, 'D', 'diffuse')}
-      <text class="circuit-small" x="698" y="170" text-anchor="middle">h is not boosted</text></svg>`;
-    const absent = amplitude(selected) === 0 ? ' This component currently has zero amplitude.' : '';
-    $('circuit-caption').textContent = `Numbers beside the wire names show the selected component ${ket(key)} with helper h = ${helper}, not a measurement of individual qubits.${absent}`;
+    $('circuit').innerHTML = `<svg viewBox="0 0 840 183" role="img" aria-label="Three qubit wires: first search qubit A, second search qubit B, helper h. Shaded oracle contains Check, Z on h, and Clear. Boost D acts on A and B."><rect x="375" y="9" width="294" height="152" rx="12" fill="#f6f1fb"/><text x="522" y="22" text-anchor="middle" fill="#745599" font-size="11">ORACLE: check → phase mark → undo check</text><line class="circuit-wire" x1="182" y1="53" x2="821" y2="53"/><line class="circuit-wire" x1="182" y1="96" x2="821" y2="96"/><line class="circuit-wire" x1="182" y1="139" x2="821" y2="139"/><text class="circuit-label" x="8" y="56">A · first search qubit</text><text class="circuit-label" x="8" y="99">B · second search qubit</text><text class="circuit-label" x="8" y="142">h · helper qubit</text>${gate(1, 234, 36, 40, 34, 'H')}${gate(2, 312, 79, 40, 34, 'H')}${gate(3, 393, 36, 75, 119, 'U_f', 'check')}${gate(4, 505, 122, 36, 34, 'Z')}${gate(5, 579, 36, 75, 119, 'U_f†', 'undo')}${gate(6, 710, 36, 83, 77, 'D', 'Boost')}<text class="circuit-small" x="757" y="170" text-anchor="middle">h is unchanged by D</text></svg>`;
+    $('circuit-caption').textContent = 'Each wire is one qubit, not a candidate key. The highlighted gate is the operation just applied to reach this snapshot. The cards show the resulting joint state; wire names are not measured values.';
   }
   function renderWalkthrough() {
     document.querySelectorAll('#stage-nav button').forEach((button, i) => {
       if (i === stage) button.setAttribute('aria-current', 'step'); else button.removeAttribute('aria-current');
     });
     $('step-badge').textContent = stage === 0 ? 'INITIAL STATE' : stage <= 2 ? `PREPARE · ${stage} / 2` : stage <= 5 ? `ORACLE · ${stage - 2} / 3` : 'AMPLITUDE AMPLIFICATION';
-    $('stage-title').textContent = STAGES[stage].title;
-    $('stage-copy').textContent = STAGES[stage].text;
-    $('back').disabled = stage === 0;
-    $('next').disabled = false;
-    $('next').textContent = stage === 6 ? 'Try measurements ↓' : `Next: ${STAGES[stage + 1].short} →`;
-    const probabilities = E.keyProbabilities(model.states[stage]);
+    $('stage-title').textContent = STAGES[stage].title; $('stage-copy').textContent = stageCopy();
+    $('back').disabled = stage === 0; $('next').disabled = false;
+    $('next').textContent = stage === 6 ? 'Try measurements ↓' : stage === 5 ? 'Predict before Boost ↓' : `Next: ${STAGES[stage + 1].short} →`;
+    const state = model.states[stage], probabilities = E.keyProbabilities(state);
+    const hasNegativeAmplitude = state.some(value => value < -1e-12);
+    $('negative-amplitude-legend').hidden = !hasNegativeAmplitude;
+    $('nonnegative-amplitude-note').hidden = hasNegativeAmplitude;
     $('probability-total').textContent = `Total probability: ${percent(probabilities.reduce((a, b) => a + b, 0))}`;
     $('candidate-cards').innerHTML = KEYS.map((key, k) => {
       const a = amplitude(k), h = helperFor(k);
-      return `<button id="key-${k}" class="candidate-card ${a < 0 ? 'negative' : ''}" type="button" data-key="${k}" aria-pressed="${k === selected}" aria-label="Inspect key ${key}. Amplitude ${decimal(a)}, probability ${percent(probabilities[k])}, helper ${h}"><span class="key-header"><span class="key-label">${ket(key)}</span><span class="helper-tag ${h ? 'one' : ''}">h = ${h}</span></span><span class="amplitude-drawing">${drawAmplitude(a)}</span><span class="amp-label"><span>Amplitude</span><strong>${exact(a, true)}</strong></span><span class="probability-track"><span style="width:${probabilities[k] * 100}%"></span></span><span class="probability-label"><span>Key probability</span><strong>${percent(probabilities[k])}</strong></span></button>`;
+      return `<button id="key-${k}" class="candidate-card ${a < 0 ? 'negative' : ''}" type="button" data-key="${k}" aria-pressed="${k === selected}" aria-label="Inspect search label ${key}. ${a === 0 ? 'Component absent: zero amplitude' : `Joint label ${key}${h}, amplitude ${decimal(a)}`}, key probability ${percent(probabilities[k])}"><span class="key-header"><span class="key-label">${ket(key)}</span><span class="helper-tag ${a !== 0 && h ? 'one' : ''}">${a === 0 ? 'Component absent' : 'h label: ' + h}</span></span><span class="amplitude-drawing">${drawAmplitude(a)}</span><span class="amp-label"><span>Joint amplitude</span><strong>${exact(a, true)}</strong></span><span class="probability-track"><span style="width:${probabilities[k] * 100}%"></span></span><span class="probability-label"><span>Key probability</span><strong>${percent(probabilities[k])}</strong></span></button>`;
     }).join('');
     const insights = [
-      'A zero amplitude means that outcome cannot be measured in this state. The four cards are labels for possible keys; they are not four qubits.',
-      'H acts on one wire, but it changes the joint state. There are now two possible keys because B is still fixed at 0.',
-      'The joint state is (|00⟩ + |01⟩ + |10⟩ + |11⟩)/2. There are four equal amplitudes, carried by two search qubits.',
-      `The helper is 1 only in the ${ket(model.target)} component. It is now entangled with the search register. Each key is still 25% likely.`,
-      `Only ${ket(model.target)} has negative amplitude. “Negative” describes a relative phase, never a negative probability. All four key probabilities remain 25%.`,
-      `The helper is back to 0. The matching key ${ket(model.target)} still has amplitude −½. The oracle has marked a phase but has not made that key more likely.`,
-      `Interference gives ${ket(model.target)} amplitude +1 and the other keys amplitude 0. One ideal measurement now returns ${model.target} with probability 100%.`
+      'There are three physical qubits and eight possible joint labels. Only |000⟩ is populated initially. Zero amplitude means zero chance of that outcome.',
+      'H changes the joint state, but it does not create extra qubits. At this step A is in a superposition, while B and h are each in |0⟩.',
+      'The search state is |+⟩A ⊗ |+⟩B = (|00⟩ + |01⟩ + |10⟩ + |11⟩)/2. Two superposed qubits give four joint labels without being entangled yet.',
+      `Only the ${ket(model.target + '1')} term has helper label 1. The other three populated terms have helper label 0. These are different terms in one state of the same helper qubit. All search keys remain 25% likely.`,
+      `The relative sign of the ${ket(model.target + '1')} term changed. This is a phase of the full joint component, not a negative value stored in a qubit. The sign matters for later interference, even though the key probabilities have not changed.`,
+      `Oracle complete: the full state factors as (the phase-marked AB state) ⊗ |0⟩h. The helper no longer carries information about the key. This does not make A and B independent of each other. Predict below before applying Boost.`,
+      `The four contributions reinforce at output ${ket(model.target)} and cancel at the other outputs. The resulting search state is the definite key ${ket(model.target)}; h is |0⟩. In this ideal model a measurement returns ${model.target} with probability 100%.`
     ];
     $('state-insight').textContent = insights[stage];
+    const previous = Math.max(0, stage - 1), hBefore = helperAt(previous, selected), hAfter = helperFor(selected);
+    const before = model.states[previous][2 * selected + hBefore], after = amplitude(selected);
+    const pBefore = E.keyProbabilities(model.states[previous])[selected];
+    $('component-step').innerHTML = `<strong>Inspecting search label ${KEYS[selected]} · ${stage === 0 ? 'initial snapshot' : 'previous and current snapshots'}</strong><div class="formula">${stage === 0 ? `Now: ${exact(after, true)}${ket(KEYS[selected] + hAfter)}` : `Before: ${exact(before, true)}${ket(KEYS[selected] + hBefore)}<br>After: ${exact(after, true)}${ket(KEYS[selected] + hAfter)}`}</div><p>Search-key probability: ${percent(pBefore)} ${stage === 0 ? '=' : '→'} ${percent(probabilities[selected])}. ${[1, 2, 6].includes(stage) ? 'H and D combine input terms: this is a comparison of one component in two snapshots, not an isolated transformation of that term.' : 'The checker and Z act on each basis term as described above.'} ${after === 0 ? 'This output label has zero amplitude; it is not an observed helper value.' : 'The digits are basis labels, not measurements of individual qubits.'}</p>`;
+    const helperEntangled = stage === 3 || stage === 4, abEntangled = stage >= 3 && stage <= 5;
+    $('entanglement-status').innerHTML = `<span>h with the whole AB register: <strong>${helperEntangled ? 'entangled' : 'independent'}</strong></span><span>A with B: <strong>${abEntangled ? 'entangled' : 'independent'}</strong></span>`;
+    $('helper-concept').innerHTML = `<p>A wire names a physical qubit. A digit inside ${ket('ABh')} labels one possible joint outcome. The full superposition can contain terms with h = 0 and terms with h = 1; it does not need another helper for each term.</p><p>After Check, the matching AB label accompanies ${ket('1')}h and the other labels accompany ${ket('0')}h. The helper’s state depends on the key label, so the joint state cannot be written as one independent AB state times one independent h state. That is entanglement of <strong>h with the whole register AB</strong>, not two separate pairs.</p><p>After Clear, all populated terms accompany ${ket('0')}h, so we can factor it out. h is then independent of AB. A and B still have a relative phase pattern that cannot factor into independent states of A and B. In this particular game A and B are also entangled during Check and Mark. Entanglement is not generally transitive; each relationship must be checked separately. The calculation is available underneath.</p>`;
     renderCircuit();
   }
+  function renderDemo() {
+    const key = KEYS[selected], f = E.predicate(key, model.requiredA, model.requiredB);
+    $('demo-check-state').textContent = `Current label: ${ket(key + demoHelper)} · h = ${demoHelper}`;
+    $('demo-check-message').textContent = demoMessage || `For ${key}, f = ${f}. One check ${f ? 'toggles h: 0 ↔ 1' : 'leaves h unchanged'}. Two checks always restore the starting label. This mini demo contains no Z phase mark.`;
+  }
   function renderChecker() {
-    const key = KEYS[selected], bits = key.split('').map(Number);
-    const factors = [model.requiredA ? bits[0] : 1 - bits[0], model.requiredB ? bits[1] : 1 - bits[1]];
-    const f = factors[0] * factors[1];
+    const key = KEYS[selected], bits = key.split('').map(Number), f = E.predicate(key, model.requiredA, model.requiredB);
     $('rule-formula').textContent = `${ruleText()}  (1 = fits, 0 = does not fit)`;
-    $('selected-key').innerHTML = `<span class="small">Inspecting the component</span><span class="key-label">${ket(key)}</span>`;
+    $('selected-key').innerHTML = `<span class="small">Inspecting search label · not measuring</span><span class="key-label">${ket(key)}</span>`;
     $('condition-checks').innerHTML = ['A', 'B'].map((letter, i) => {
       const required = i === 0 ? model.requiredA : model.requiredB, pass = bits[i] === required;
-      return `<div class="condition ${pass ? 'pass' : 'fail'}">${i === 0 ? 'First' : 'Second'} bit ${letter} must be ${required}<strong>${letter} = ${bits[i]}</strong><div class="check-result">${pass ? '✓ Condition passes' : '× Condition fails'}</div></div>`;
+      return `<div class="condition ${pass ? 'pass' : 'fail'}">${letter}, ${i === 0 ? 'first' : 'second'} search qubit: required value ${required}<strong>Label value: ${letter} = ${bits[i]}</strong><div class="check-result">${pass ? '✓ Condition passes' : '× Condition fails'}</div></div>`;
     }).join('');
     const substitution = (value, required) => required ? `${value}` : `(1 − ${value})`;
     $('substitution').textContent = `f(${bits[0]}, ${bits[1]}) = ${substitution(bits[0], model.requiredA)} × ${substitution(bits[1], model.requiredB)} = ${f}`;
     $('classical-result').className = `feedback ${classicalTest === null ? '' : f ? 'success' : 'retry'}`;
-    $('classical-result').textContent = classicalTest === null ? 'Test this one candidate to see what the checker would return.' : f ? `Key ${key} fits: both conditions pass, so f = 1. This classical test evaluates one chosen input.` : `Key ${key} does not fit: at least one condition fails, so f = 0. Try another candidate card.`;
+    $('classical-result').textContent = classicalTest === null ? 'This calculation explains one input. The button below the calculation confirms its classical result; it does not run or alter the quantum state.' : `Classical result for ${key}: ${f ? 'both conditions pass, so f = 1' : 'at least one condition fails, so f = 0'}. The quantum checker implements this same rule reversibly on the superposition.`;
     $('truth-rows').innerHTML = KEYS.map((candidate, k) => {
       const aPass = Number(candidate[0]) === model.requiredA, bPass = Number(candidate[1]) === model.requiredB;
-      return `<tr class="${k === selected ? 'selected' : ''}" data-key="${k}"><td><button id="truth-${k}" type="button" data-key="${k}" aria-label="Inspect candidate ${candidate}">${candidate}</button></td><td>${aPass ? '✓' : '×'}</td><td>${bPass ? '✓' : '×'}</td><td>${Number(aPass && bPass)}</td><td class="${aPass && bPass ? 'status-fit' : ''}">${aPass && bPass ? 'Fits' : 'No'}</td></tr>`;
+      return `<tr class="${k === selected ? 'selected' : ''}" data-key="${k}"><td><button id="truth-${k}" type="button" data-key="${k}" aria-label="Inspect candidate ${candidate}">${candidate}</button></td><td>${aPass ? '✓' : '×'}</td><td>${bPass ? '✓' : '×'}</td><td>${Number(aPass && bPass)}</td><td class="${aPass && bPass ? 'status-fit' : ''}">${aPass && bPass ? 'Fits' : 'No'}</td><td>${amplitude(k) === 0 ? '—' : helperFor(k)}</td></tr>`;
     }).join('');
     ['chain-compute', 'chain-mark', 'chain-clear'].forEach((id, i) => $(id).classList.toggle('active', stage === i + 3));
-    const helperMessages = {
-      0: 'The helper starts in |0⟩. To see the coherent check, prepare both search qubits and advance to “Check”.',
-      1: 'The helper is still |0⟩. The H gate acts on A, not on the helper.',
-      2: 'The helper is |0⟩ for all four components. “Check” will compute f into it without measuring anything.',
-      3: `For the selected ${key}: h = 0 ⊕ f(${bits[0]},${bits[1]}) = ${f}. Across the full superposition, helper 1 belongs only to key ${model.target}; the helper is not four separate qubits.`,
-      4: `For the selected ${key}: h = ${f}, so Z multiplies its amplitude by (−1)^${f} = ${f ? '−1' : '+1'}. The sign is attached to the joint component, not to A or B separately.`,
-      5: `For the selected ${key}: h = ${f} ⊕ ${f} = 0. Undoing the checker erases the temporary flag, not the phase mark. The search register can now interfere without leftover helper information.`,
-      6: 'The diffuser acts on A and B. It leaves the helper in |0⟩, because the checking workspace has already been cleared.'
-    };
-    $('helper-explanation').textContent = helperMessages[stage];
+    const helperMessages = [
+      'h begins in |0⟩. Prepare A and B with H to see the checker act on the superposition.',
+      'H acts on A. B and the helper are still in |0⟩; no key check has happened.',
+      'Each populated search term accompanies helper |0⟩. Next, Check toggles h only in the term whose key fits.',
+      `Selected label ${key}: |${key}0⟩ → |${key}${f}⟩ because 0 ⊕ f = ${f}. A and B’s label values ${bits[0]} and ${bits[1]} do not change. Across the whole state, the one helper is now entangled with AB.`,
+      `Selected label ${key}: h = ${f}. Z multiplies this term’s amplitude by ${f ? '−1' : '+1'}, so ${f ? '+½ becomes −½' : '+½ stays +½'}. The joint label remains |${key}${f}⟩. Z changes no digit; it changes the relative phase.`,
+      `Selected label ${key}: h = ${f} ⊕ ${f} = 0. ${f ? 'The matching term toggles 1 → 0 and keeps amplitude −½.' : 'This nonmatching term stays at h = 0 and keeps amplitude +½.'} This is reversible undoing, not measuring or discarding the helper.`,
+      'Boost mixes the AB amplitudes. h remains in its independent |0⟩ state; the helper is not removed or boosted.'
+    ];
+    $('helper-explanation').textContent = helperMessages[stage]; renderDemo();
   }
   function renderMirror() {
-    const ready = stage >= 5, revealed = stage === 6;
-    $('mirror-ready').textContent = ready ? 'Oracle complete: the input mean is ¼. Select any key card and predict its reflected amplitude.' : 'Finish the oracle through “Clear h” to unlock this activity. The workspace must be cleared before this search-space reflection.';
-    ['prediction', 'check-prediction', 'reveal-boost'].forEach(id => $(id).disabled = !ready);
-    $('reveal-boost').textContent = revealed ? 'Diffuser applied ✓' : 'Apply the diffuser';
-    $('reveal-boost').disabled = !ready || revealed;
-    $('prediction-key').textContent = ket(KEYS[selected]);
-    $('prediction-value').textContent = exact(prediction, true);
+    const ready = stage >= 5, revealed = stage === 6, predicting = stage === 5;
+    $('mirror-ready').textContent = revealed ? 'Boost has been applied. Green bars and dots are revealed outputs. Return to prediction to view the oracle output again.' : ready ? 'Oracle complete. Select any key card or any row in the checker table on the left (above on a narrow screen), or use Key to predict here. Choose an output amplitude before applying Boost.' : 'Finish Check → Mark phase → Clear h to unlock this activity. Stop at Clear h, before Boost.';
+    ['prediction', 'check-prediction', 'reveal-boost'].forEach(id => $(id).disabled = !predicting);
+    $('mirror-key').value = KEYS[selected]; $('mirror-key').disabled = !ready;
+    $('return-to-prediction').hidden = !revealed;
+    $('reveal-boost').textContent = revealed ? 'Boost applied ✓' : 'Apply Boost and reveal';
+    $('prediction-key').textContent = ket(KEYS[selected]); $('prediction-value').textContent = exact(prediction, true);
+    $('prediction').setAttribute('aria-valuetext', `Predicted amplitude ${decimal(prediction)}`);
     if (!ready) {
-      $('mirror-chart').innerHTML = '<div class="waiting">The mean and amplitude mirror will appear here after the check, phase mark, and clear steps.</div>';
-      $('reflection-feedback').textContent = 'Your prediction will not change the simulator’s state.';
-      $('reflection-feedback').className = 'feedback';
-      return;
+      $('mirror-chart').innerHTML = '<div class="waiting">The oracle output and its mean will appear here after Clear h. Reflected answers stay hidden until you apply Boost.</div>';
+      $('reflection-feedback').textContent = 'Moving the prediction slider never changes the quantum state.';
+      $('reflection-feedback').className = 'feedback'; return;
     }
-    const input = searchMarked(), reflection = E.reflection(input);
-    const y = a => 122 - 94 * a;
-    let svg = '<svg viewBox="0 0 440 252" role="img" aria-label="Signed amplitudes before and after reflection around their mean of one quarter. A hollow circle shows your prediction.">';
+    const input = searchMarked(), reflection = E.reflection(input), y = a => 140 - 104 * a;
+    let svg = `<svg viewBox="0 0 480 280" role="img" aria-label="${revealed ? 'Signed amplitudes before and after Boost. Green outputs are revealed.' : 'Oracle output before Boost. Purple bars are input amplitudes; a hollow circle is your prediction. Reflected answers are hidden.'}">`;
     [1, 0.5, 0.25, 0, -0.5, -1].forEach(value => {
-      svg += `<line x1="44" y1="${y(value)}" x2="430" y2="${y(value)}" class="${value === 0.25 ? 'mirror-mean' : value === 0 ? 'mirror-zero' : 'mirror-grid'}"/><text x="35" y="${y(value) + 4}" text-anchor="end" class="mirror-axis">${exact(value, true)}</text>`;
+      svg += `<line x1="48" y1="${y(value)}" x2="468" y2="${y(value)}" class="${value === reflection.mean ? 'mirror-mean' : value === 0 ? 'mirror-zero' : 'mirror-grid'}"/><text x="40" y="${y(value) + 4}" text-anchor="end" class="mirror-axis">${exact(value, true)}</text>`;
     });
     KEYS.forEach((key, k) => {
-      const x = 87 + k * 94, beforeY = y(input[k]);
-      svg += `<rect x="${x - 15}" y="${Math.min(y(0), beforeY)}" width="15" height="${Math.abs(y(0) - beforeY)}" rx="3" class="mirror-bar-before"/><text x="${x}" y="237" text-anchor="middle" class="mirror-key">${key}</text>`;
+      const x = 90 + k * 104, beforeY = y(input[k]);
+      svg += `<rect x="${x - 15}" y="${Math.min(y(0), beforeY)}" width="15" height="${Math.abs(y(0) - beforeY)}" rx="3" class="mirror-bar-before"/><text x="${x}" y="268" text-anchor="middle" class="mirror-key">${key}</text>`;
       if (revealed) {
         const afterY = y(reflection.output[k]);
-        svg += reflection.output[k] === 0 ? `<circle cx="${x + 11}" cy="${y(0)}" r="3" fill="#087d79"/>` : `<rect x="${x + 3}" y="${Math.min(y(0), afterY)}" width="15" height="${Math.abs(y(0) - afterY)}" rx="3" class="mirror-bar-after"/>`;
-      }
-      if (k === selected) svg += `<circle class="prediction-ring" cx="${x + 11}" cy="${y(prediction)}" r="6"/>`;
+        svg += reflection.output[k] === 0 ? `<circle cx="${x + 11}" cy="${y(0)}" r="4" fill="#087d79"/>` : `<rect x="${x + 3}" y="${Math.min(y(0), afterY)}" width="15" height="${Math.abs(y(0) - afterY)}" rx="3" class="mirror-bar-after"/>`;
+      } else if (k === selected) svg += `<circle class="prediction-ring" cx="${x + 11}" cy="${y(prediction)}" r="7"/>`;
     });
-    svg += '<text x="429" y="91" text-anchor="end" fill="#8a611d" font-size="10">mean = ¼</text><text x="45" y="13" fill="#745c98" font-size="10">Purple: before</text><text x="170" y="13" fill="#087d79" font-size="10">Green: revealed output</text></svg>';
+    svg += `<text x="467" y="${y(reflection.mean) - 7}" text-anchor="end" fill="#815b1d" font-size="12">mean = (${input.map(a => exact(a, true)).join(' ')}) / 4 = ${exact(reflection.mean)}</text><text x="48" y="16" fill="#745c98" font-size="12">Purple: input</text><text x="182" y="16" fill="#087d79" font-size="12">${revealed ? 'Green: output' : 'Hollow circle: your prediction'}</text></svg>`;
     $('mirror-chart').innerHTML = svg;
     const saved = reflectionMessages[selected];
     $('reflection-feedback').className = `feedback ${saved ? saved.correct ? 'success' : 'retry' : ''}`;
-    $('reflection-feedback').textContent = saved ? saved.text : `For ${ket(KEYS[selected])}, the input amplitude is ${exact(input[selected], true)}. Calculate 2 × ¼ − (${exact(input[selected], true)}).`;
+    $('reflection-feedback').textContent = saved ? saved.text : revealed ? `Output ${ket(KEYS[selected])}: amplitude ${exact(reflection.output[selected], true)}, key probability ${percent(reflection.output[selected] ** 2)}.` : `Input for ${ket(KEYS[selected])}: ${exact(input[selected], true)}. Calculate 2 × ¼ − (${exact(input[selected], true)}), then move the hollow marker and check.`;
   }
   function renderChallenges() {
     $('score').textContent = `${Number(phasePoint) + reflectionPoints.size} / 5`;
-    document.querySelector('[data-answer="all"]').textContent = `Every key with first bit A = ${model.requiredA} changes sign.`;
+    document.querySelector('[data-answer="all"]').textContent = `Every key whose A value is ${model.requiredA} changes sign.`;
     document.querySelectorAll('.answer').forEach(button => {
+      button.disabled = stage !== 3;
       button.classList.toggle('chosen', button.dataset.answer === phaseAnswer);
       button.classList.toggle('correct', button.dataset.answer === 'phase');
       button.classList.toggle('wrong', button.dataset.answer !== 'phase');
@@ -410,120 +463,168 @@
     });
     const correct = phaseAnswer === 'phase';
     $('phase-feedback').className = `feedback ${phaseAnswer ? correct ? 'success' : 'retry' : ''}`;
-    $('phase-feedback').textContent = !phaseAnswer ? 'Make a prediction before the “Mark phase” step.' : correct ? 'Exactly. +½ becomes −½ in the matching component, and |−½|² = ¼. Only interference in the diffuser changes the probabilities.' : phaseAnswer === 'all' ? `The checker tests both bits. It marks only ${model.target}, not an individual qubit or every key with A = ${model.requiredA}. Try again.` : 'A phase mark alone cannot boost a key’s probability: |+½|² and |−½|² are both ¼. Try again.';
+    $('phase-feedback').textContent = phaseAnswer ? correct ? 'Correct. The matching joint amplitude changes +½ → −½, and |−½|² = ¼. The probabilities stay the same.' : phaseAnswer === 'all' ? `The rule tests both A and B. A alone is not enough to identify ${model.target}. Try again at Check.` : 'Compare |+½|² with |−½|². Does the sign survive squaring? Try again at Check.' : stage < 3 ? 'Advance to Check to predict the effect of Z, before Mark phase is applied.' : stage === 3 ? 'Predict now, while the matching amplitude is still +½. Then apply Mark phase.' : 'Mark phase has already been applied. Return to Check if you want to make this prediction first.';
+    $('apply-phase').hidden = stage !== 3; $('return-to-phase').hidden = stage < 4;
     renderMirror();
   }
   function waveSVG(products) {
     const colours = ['#087d79', '#4c89b8', '#744abd', '#b67b31'];
-    const path = (value, start, end) => Array.from({ length: 85 }, (_, i) => {
-      const x = start + (end - start) * i / 84;
-      const y = 62 - value * 39 * Math.sin(i / 84 * Math.PI * 4);
+    const path = (value, start, end, baseline = 67) => Array.from({ length: 85 }, (_, i) => {
+      const x = start + (end - start) * i / 84, y = baseline - value * 39 * Math.sin(i / 84 * Math.PI * 4);
       return `${i ? 'L' : 'M'}${x.toFixed(1)},${y.toFixed(1)}`;
     }).join(' ');
-    const sum = products.reduce((a, b) => a + b, 0);
-    return `<svg viewBox="0 0 480 120" role="img" aria-label="Wave analogy: four signed contributions add to ${decimal(sum)}"><line x1="15" y1="62" x2="465" y2="62" stroke="#dce5e9"/><text x="15" y="13" fill="#5a6c7e" font-size="11">Four signed paths</text>${products.map((value, i) => `<path d="${path(value, 15, 268)}" fill="none" stroke="${colours[i]}" stroke-width="${1.5 + i * 0.15}" stroke-dasharray="${i ? '4 4' : 'none'}"/>`).join('')}<text x="286" y="68" fill="#5a6c7e" font-size="19">→</text><text x="320" y="13" fill="#5a6c7e" font-size="11">Their sum</text><path d="${path(sum, 320, 465)}" fill="none" stroke="#087d79" stroke-width="3"/></svg>`;
+    const sum = E.clean(products.reduce((a, b) => a + b, 0));
+    return `<svg viewBox="0 0 480 130" role="img" aria-label="Wave analogy: four separate signed products, one for each input label, add to ${decimal(sum)}"><text x="15" y="14" fill="#5a6c7e" font-size="14">Four signed products</text>${products.map((value, i) => { const baseline = 34 + i * 24; return `<text x="10" y="${baseline + 4}" fill="${colours[i]}" font-size="13">${KEYS[i]}</text><line x1="40" y1="${baseline}" x2="268" y2="${baseline}" stroke="#e2e9ed"/><path d="${path(value, 40, 268, baseline)}" fill="none" stroke="${colours[i]}" stroke-width="2.5"/>`; }).join('')}<text x="286" y="73" fill="#5a6c7e" font-size="19">→</text><text x="320" y="14" fill="#5a6c7e" font-size="14">Sum: ${exact(sum, true)}</text><line x1="320" y1="67" x2="465" y2="67" stroke="#dce5e9"/><path d="${path(sum, 320, 465)}" fill="none" stroke="#087d79" stroke-width="3"/></svg>`;
   }
   function renderInterference() {
-    $('interference-key').value = KEYS[selected];
-    if (stage < 5) {
-      $('interference-content').innerHTML = '<div class="waiting">Complete the oracle through “Clear h”. Then inspect how the diffuser combines the four marked search amplitudes.</div>';
+    $('interference-key').value = KEYS[selected]; $('interference-key').disabled = stage !== 6;
+    if (stage !== 6) {
+      $('interference-content').innerHTML = `<div class="waiting">${stage === 5 ? 'Predict the mirror reflection above, then apply Boost. The worked products and sums stay hidden until then.' : 'After Boost, this panel will show all four contributions to a selected output.'}</div>`;
       return;
     }
-    const input = searchMarked(), row = E.D[selected], products = row.map((weight, i) => weight * input[i]);
-    const sum = E.clean(products.reduce((a, b) => a + b, 0));
-    const reinforces = products.every(value => value > 0);
-    $('interference-content').innerHTML = `<div class="contribution-grid">${KEYS.map((key, i) => `<div class="contribution ${products[i] < 0 ? 'minus' : ''}"><small>Input ${ket(key)} → output ${ket(KEYS[selected])}</small><div class="formula">${exact(row[i], true)} × (${exact(input[i], true)})</div><strong>${exact(products[i], true)}</strong></div>`).join('')}</div><div class="interference-result"><div class="formula">${products.map(x => exact(x, true)).join(' ')} = ${exact(sum, true)}</div><div><strong>${reinforces ? 'Reinforcement' : 'Cancellation'}</strong><div class="small">Output amplitude ${exact(sum)} → probability ${percent(sum ** 2)}</div></div></div><div class="wave-view">${waveSVG(products)}<p>The wave drawing is an analogy for adding signed amplitudes, not an animation of the quantum state over time. The exact contributions are the products above.</p></div><p class="small">Every diffuser row has −½ on its own input and +½ on the other three. No row contains the lock rule. Select a different output to compare the interference.</p>`;
+    const input = searchMarked(), row = E.D[selected], products = dotProduct(selected, E.D, input);
+    const sum = E.clean(products.reduce((a, b) => a + b, 0)), reinforces = products.every(value => value > 0);
+    $('interference-content').innerHTML = `<div class="contribution-grid">${KEYS.map((key, i) => `<div class="contribution ${products[i] < 0 ? 'minus' : ''}"><small>Input ${ket(key)} → output ${ket(KEYS[selected])}</small><div class="formula">${mathNumber(row[i], true)} × (${mathNumber(input[i], true)})</div><strong>${exact(products[i], true)}</strong></div>`).join('')}</div><div class="interference-result"><div class="formula">${products.map(x => exact(x, true)).join(' ')} = ${exact(sum, true)}</div><div><strong>${reinforces ? 'Reinforcement: four positive products' : 'Cancellation: two positive and two negative products'}</strong><div class="small">Output amplitude ${exact(sum)} → probability ${percent(sum ** 2)}</div></div></div><div class="wave-view">${waveSVG(products)}<p>The waves are an analogy for adding these signed numbers, not travelling qubits or an animation of the state in time. The exact matrix products appear above.</p></div><p class="small">A diffuser row has −½ for its own input and +½ for the other three. For the marked key, −½ × −½ contributes +¼. For an unmarked key, −½ × +½ and +½ × −½ are the two negative contributions. D contains no lock rule.</p>`;
   }
-  function matrixTable(matrix, rowSelected = -1, vector = null) {
-    return `<div class="bracket"><table class="matrix-table" aria-label="Matrix entries"><tbody>${matrix.map((row, r) => `<tr class="${r === rowSelected ? 'selected' : ''}">${row.map((value, c) => `<td class="${value === 0 ? 'zero' : ''} ${r === rowSelected && value !== 0 && vector && vector[c] !== 0 ? 'used' : ''}">${exact(value)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
+  function matrixTable(matrix, rowSelected = -1, vector = null, basis = null) {
+    const labels = basis || (matrix.length === 8 ? E.BASIS : matrix.length === 4 ? KEYS : ['0', '1']);
+    return `<div class="bracket"><table class="matrix-table" aria-label="Matrix: rows are outputs and columns are inputs"><thead><tr><th scope="col">out / in</th>${labels.map(label => `<th scope="col">${ket(label)}</th>`).join('')}</tr></thead><tbody>${matrix.map((row, r) => `<tr class="${r === rowSelected ? 'selected' : ''}"><th scope="row">${ket(labels[r])}</th>${row.map((value, c) => `<td class="${value === 0 ? 'zero' : ''} ${r === rowSelected && value !== 0 && vector && vector[c] !== 0 ? 'used' : ''}">${mathNumber(value)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`;
   }
   function vectorTable(vector, kind, inputMatrix = null) {
-    return `<div class="bracket"><table class="matrix-table vector-table ${kind === 'input' ? 'input-vector' : ''}" aria-label="${kind} full state vector"><tbody>${vector.map((value, r) => `<tr class="${kind === 'output' && r === mathRow ? 'selected' : ''}"><td class="basis-cell">${ket(E.BASIS[r])}</td><td class="${value === 0 ? 'zero' : ''} ${kind === 'input' && inputMatrix[mathRow][r] !== 0 && value !== 0 ? 'used' : ''}">${exact(value)}</td></tr>`).join('')}</tbody></table></div>`;
+    return `<div class="bracket"><table class="matrix-table vector-table ${kind === 'input' ? 'input-vector' : ''}" aria-label="${kind} full state vector"><thead><tr><th scope="col">ABh</th><th scope="col">amplitude</th></tr></thead><tbody>${vector.map((value, r) => `<tr class="${kind === 'output' && r === mathRow ? 'selected' : ''}"><th scope="row" class="basis-cell">${ket(E.BASIS[r])}</th><td class="${value === 0 ? 'zero' : ''} ${kind === 'input' && inputMatrix[mathRow][r] !== 0 && value !== 0 ? 'used' : ''}">${mathNumber(value)}</td></tr>`).join('')}</tbody></table></div>`;
   }
   function ketExpression(state, basis) {
-    const terms = state.map((value, i) => value === 0 ? '' : `${exact(value, true)}${ket(basis[i])}`).filter(Boolean);
-    return terms.join(' ').replace(/^\+/, '') || '0';
+    return state.map((value, i) => value === 0 ? '' : `${exact(value, true)}${ket(basis[i])}`).filter(Boolean).join(' ').replace(/^\+/, '') || '0';
+  }
+  function reducedStates(state) {
+    const helper = E.identity(2).map((row, h) => row.map((_, hp) => E.clean(KEYS.reduce((sum, __, k) => sum + state[2 * k + h] * state[2 * k + hp], 0))));
+    const search = E.identity(4).map((row, k) => row.map((_, kp) => E.clean(state[2 * k] * state[2 * kp] + state[2 * k + 1] * state[2 * kp + 1])));
+    const partialTranspose = search.map((row, k) => row.map((_, kp) => {
+      const a = k >> 1, b = k % 2, ap = kp >> 1, bp = kp % 2;
+      return search[2 * a + bp][2 * ap + b];
+    }));
+    const purity = helper.reduce((sum, row) => sum + row.reduce((s, x) => s + x * x, 0), 0);
+    return { helper, search, partialTranspose, purity };
+  }
+  // Jacobi diagonalisation for the small real symmetric matrices used in the proof.
+  function eigenvalues(matrix) {
+    const a = matrix.map(row => row.slice()), n = a.length;
+    for (let sweep = 0; sweep < 100; sweep++) {
+      let p = 0, q = 1, largest = 0;
+      for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) if (Math.abs(a[i][j]) > largest) { p = i; q = j; largest = Math.abs(a[i][j]); }
+      if (largest < 1e-12) break;
+      const angle = 0.5 * Math.atan2(2 * a[p][q], a[q][q] - a[p][p]), c = Math.cos(angle), s = Math.sin(angle);
+      const app = a[p][p], aqq = a[q][q], apq = a[p][q];
+      for (let i = 0; i < n; i++) if (i !== p && i !== q) {
+        const aip = a[i][p], aiq = a[i][q];
+        a[i][p] = a[p][i] = c * aip - s * aiq; a[i][q] = a[q][i] = s * aip + c * aiq;
+      }
+      a[p][p] = c * c * app - 2 * s * c * apq + s * s * aqq;
+      a[q][q] = s * s * app + 2 * s * c * apq + c * c * aqq; a[p][q] = a[q][p] = 0;
+    }
+    return a.map((row, i) => E.clean(row[i])).sort((a, b) => a - b);
+  }
+  function renderEntanglementMath() {
+    const state = model.states[stage], { helper, search, partialTranspose, purity } = reducedStates(state);
+    const mixedSearch = stage === 3 || stage === 4;
+    let searchProof;
+    if (mixedSearch) {
+      const smallest = eigenvalues(partialTranspose)[0];
+      searchProof = `<p><strong>A versus B:</strong> ignoring h gives a mixed search state ρAB, so a four-entry pure-state factorisation test cannot be used. For two qubits, a negative eigenvalue of the partial transpose proves entanglement. Partial transpose swaps the B row and column indices; it is a mathematical test, not a gate applied to the qubits.</p><div class="proof-matrices"><div><h3>ρAB = Trₕ(|ψ⟩⟨ψ|)</h3>${matrixTable(search)}</div><div><h3>ρAB with B partially transposed</h3>${matrixTable(partialTranspose)}</div></div><p class="formula">Smallest eigenvalue = (1 − √3)/4 ≈ ${decimal(smallest)} &lt; 0</p><p>Thus A and B are also entangled at this step. This is a separate test from h versus AB; it is not inferred by treating entanglement as transitive.</p>`;
+    } else {
+      const [a00, a01, a10, a11] = state.filter((_, i) => i % 2 === 0), left = E.clean(a00 * a11), right = E.clean(a01 * a10);
+      searchProof = `<p><strong>A versus B:</strong> the search state is pure here. It factors into an A state times a B state exactly when a₀₀a₁₁ = a₀₁a₁₀.</p><p class="formula">a₀₀a₁₁ = (${exact(a00)})(${exact(a11)}) = ${exact(left, true)}<br>a₀₁a₁₀ = (${exact(a01)})(${exact(a10)}) = ${exact(right, true)}</p><p>${Math.abs(left - right) < 1e-10 ? 'The products are equal, so A and B are independent.' : 'The products differ, so A and B are entangled, even though h is independent.'}</p>`;
+    }
+    $('entanglement-math').innerHTML = `<p>These values are calculated from the current eight-entry state. The whole ABh state is pure throughout this circuit. A reduced density matrix describes one subsystem when the other qubits are ignored; the partial trace TrAB sums out the AB labels.</p><p>For a pure joint state, h is independent of AB exactly when its reduced density matrix ρh has purity 1. Purity is Tr(ρh²): square the matrix, then add its diagonal entries.</p><div class="proof-matrices"><div><h3>ρh = TrAB(|ψ⟩⟨ψ|)</h3>${matrixTable(helper)}</div></div><p class="formula">Tr(ρh²) = ${exact(purity)} ${Math.abs(purity - 1) < 1e-10 ? '→ h is independent of AB' : '&lt; 1 → h is entangled with AB'}</p>${searchProof}`;
   }
   function renderMath() {
     const matrix = model.operators[stage], input = mathInput(), output = model.states[stage];
     $('math-row').value = String(mathRow);
-    $('math-description').textContent = stage === 0 ? 'Initial snapshot: the identity matrix leaves |000⟩ unchanged. All eight register amplitudes are shown, including zeros.' : `Current operation: ${STAGES[stage].operator}. The input vector is the preceding step; the output vector is the current snapshot. These are the exact matrices used by the simulator.`;
+    $('math-description').textContent = stage === 0 ? 'Initial snapshot: I₈ leaves |000⟩ unchanged. The vector lists amplitudes, not probabilities. Every joint basis label is shown, including zeros.' : `Operation just applied: ${STAGES[stage].operator}. The input is the preceding snapshot; the output is the current snapshot. These exact matrices drive the simulator. The vector entries are amplitudes, not probabilities.`;
     $('ket-state').textContent = `|ψ⟩ = ${ketExpression(output, E.BASIS)}`;
     $('matrix-equation').innerHTML = `<div class="matrix-block"><div class="matrix-label">${STAGES[stage].operator}<small>${STAGES[stage].subtitle} · 8 × 8</small></div>${matrixTable(matrix, mathRow, input)}</div><span class="equation-symbol" aria-hidden="true">×</span><div class="matrix-block"><div class="matrix-label">|ψ_in⟩<small>Input amplitudes · ABh</small></div>${vectorTable(input, 'input', matrix)}</div><span class="equation-symbol" aria-hidden="true">=</span><div class="matrix-block"><div class="matrix-label">|ψ_out⟩<small>Output amplitudes · ABh</small></div>${vectorTable(output, 'output')}</div>`;
-    const products = dotProduct(mathRow, matrix, input);
-    const key = E.BASIS[mathRow].slice(0, 2), probability = output[mathRow] ** 2, keyProbability = E.keyProbabilities(output)[Math.floor(mathRow / 2)];
-    $('row-calculation').innerHTML = `<h3>Output ${ket(E.BASIS[mathRow])}: one row × the input vector</h3><div class="dot-products">${products.map((product, i) => `<div class="dot-term ${product === 0 ? 'zero-term' : ''}"><small>From ${ket(E.BASIS[i])}</small>${exact(matrix[mathRow][i])} × (${exact(input[i])}) = ${exact(product, true)}</div>`).join('')}</div><div class="formula">Sum = ${products.map(x => exact(x, true)).join(' ')} = ${exact(output[mathRow], true)}</div><p>Joint outcome probability P(${E.BASIS[mathRow]}) = |${exact(output[mathRow])}|² = ${percent(probability)}. Search-key probability P(${key}) sums the h = 0 and h = 1 outcome probabilities: ${percent(keyProbability)}.</p>`;
-    $('math-state-note').textContent = stage === 3 || stage === 4 ? 'At this intermediate step, the helper is entangled with the search register. A four-entry pure search state vector would leave out information. The full eight-entry vector above describes the actual joint state.' : 'The helper is |0⟩ and separate from the search register. All h = 1 entries are zero. The remaining four amplitudes describe the search state alone. These signed arrows are amplitude diagrams, not Bloch spheres.';
-    $('effective-matrices').innerHTML = `<div><div><h3>H ⊗ H</h3><p>Prepare both search qubits</p></div>${matrixTable(E.H2)}</div><div><div><h3>O_f</h3><p>Full oracle on search; helper starts in 0</p></div>${matrixTable(model.oracle)}</div><div><div><h3>D = 2|s⟩⟨s| − I</h3><p>|s⟩ = (1, 1, 1, 1)ᵀ/2</p></div>${matrixTable(E.D)}</div>`;
-    $('effective-state').textContent = stage === 3 || stage === 4 ? 'Search-only pure state vector unavailable at this intermediate step: use the full ABh vector above.' : `Search basis (00, 01, 10, 11): [${output.filter((_, i) => i % 2 === 0).map(x => exact(x)).join(', ')}]ᵀ`;
+    const products = dotProduct(mathRow, matrix, input), key = E.BASIS[mathRow].slice(0, 2), probability = output[mathRow] ** 2, keyProbability = E.keyProbabilities(output)[Math.floor(mathRow / 2)];
+    $('row-calculation').innerHTML = `<h3>Output ${ket(E.BASIS[mathRow])}: one row × the input vector</h3><div class="dot-products">${products.map((product, i) => `<div class="dot-term ${product === 0 ? 'zero-term' : ''}"><small>Input column ${ket(E.BASIS[i])}</small>${mathNumber(matrix[mathRow][i])} × (${mathNumber(input[i])}) = ${mathNumber(product, true)}</div>`).join('')}</div><div class="formula">Sum = ${products.map(x => exact(x, true)).join(' ')} = ${exact(output[mathRow], true)}</div><p>Joint probability P(${E.BASIS[mathRow]}) = |${exact(output[mathRow])}|² = ${percent(probability)}. Search-key probability P(${key}) = P(${key}0) + P(${key}1) = ${percent(keyProbability)}. Probabilities add here; do not add helper-0 and helper-1 amplitudes and then square.</p>`;
+    $('math-state-note').textContent = stage === 3 || stage === 4 ? 'h is entangled with AB at this intermediate step. The four card amplitudes refer to different joint ABh labels. They cannot be used as a pure four-entry search state vector. Use the full eight-entry joint vector above.' : stage === 5 ? 'Every h = 1 entry is zero. We can write |ψ⟩ = |ψAB⟩ ⊗ |0⟩h, so the four h = 0 amplitudes form a pure search state vector. h is independent of AB; A and B remain entangled with each other.' : 'Every h = 1 entry is zero, so |ψ⟩ = |ψAB⟩ ⊗ |0⟩h. The four h = 0 entries describe the pure search state. At this snapshot A and B are independent too. Superposition by itself does not imply entanglement.';
+    $('effective-matrices').innerHTML = `<div><h3>H ⊗ H</h3><p>Both search H gates together</p>${matrixTable(E.H2)}</div><div><h3>O_f</h3><p>Complete oracle; h begins and ends in 0</p>${matrixTable(model.oracle)}</div><div><h3>D = 2|s⟩⟨s| − I</h3><p>|s⟩ = (1, 1, 1, 1)ᵀ/2 · same D for every rule</p>${matrixTable(E.D)}</div>`;
+    $('effective-state').textContent = stage === 3 || stage === 4 ? 'No pure search-only vector at this step: use the full ABh vector above.' : `Current search vector in order (00, 01, 10, 11): [${output.filter((_, i) => i % 2 === 0).map(x => exact(x)).join(', ')}]ᵀ`;
+    renderEntanglementMath();
   }
   function renderMeasurements() {
+    const ready = stage === 6;
     document.querySelectorAll('#experiment-options button').forEach(button => {
-      button.classList.toggle('selected', button.dataset.mode === mode);
+      button.disabled = !ready; button.classList.toggle('selected', button.dataset.mode === mode);
       button.setAttribute('aria-pressed', String(button.dataset.mode === mode));
     });
-    const counts = trials[mode], total = counts.reduce((a, b) => a + b, 0);
-    const probabilities = E.keyProbabilities(E.experimentState(model, mode));
+    ['measure-one', 'measure-many', 'clear-trials'].forEach(id => $(id).disabled = !ready);
+    $('measurement-ready').textContent = ready ? 'Three independent experiments. Changing an experiment preserves its own counts and leaves the walkthrough unchanged.' : 'Apply Boost above to unlock measurements. Predicted probabilities and results are hidden while you are predicting.';
+    if (!ready) {
+      $('last-measurement').textContent = ''; $('histogram').innerHTML = '<div class="waiting">Measurement results appear here after Boost.</div>';
+      $('trial-explanation').textContent = 'Each trial is a new preparation and one measurement, not repeated measurements of the same uncollapsed state.'; return;
+    }
+    const counts = trials[mode], total = counts.reduce((a, b) => a + b, 0), probabilities = E.keyProbabilities(E.experimentState(model, mode));
     $('last-measurement').textContent = lastResults[mode] || 'No trials yet in this experiment.';
-    $('histogram').innerHTML = KEYS.map((key, k) => `<div><div class="hist-key">${key}</div><div class="hist-track"><span style="width:${total ? counts[k] / total * 100 : 0}%"></span></div><div class="hist-info"><strong>${counts[k]} / ${total}</strong><span>${total ? percent(counts[k] / total) : '—'}</span></div><div class="expected">Predicted probability: ${percent(probabilities[k])}</div></div>`).join('');
-    const explanations = {
-      oracle: `The oracle marks ${model.target} with a negative phase, but every key still has probability ¼. Measuring immediately loses the phase information that the diffuser could have used.`,
-      skip: 'The uniform state is unchanged by the diffuser: its mean is ½, so 2 × ½ − ½ = ½ for every amplitude. Without a phase mark there is no useful amplification.',
-      full: `In this ideal four-key example, one complete Grover round returns ${model.target} with probability 100%. The helper is 0. Other problem sizes or numbers of solutions require a suitable number of iterations.`
-    };
-    $('trial-explanation').textContent = explanations[mode];
+    $('histogram').innerHTML = KEYS.map((key, k) => `<div><div class="hist-key">${key}</div><div class="hist-track"><span style="width:${total ? counts[k] / total * 100 : 0}%"></span></div><div class="hist-info"><strong>${counts[k]} / ${total}</strong><span>${total ? percent(counts[k] / total) : '—'}</span></div><div class="expected">Theory: ${percent(probabilities[k])}</div></div>`).join('');
+    $('trial-explanation').textContent = {
+      oracle: `The oracle changes the relative phase for ${model.target}, but each key still has probability ¼. The measurement probabilities do not reveal the sign. This trial ends with a measurement, before the diffuser can use that phase pattern.`,
+      skip: 'Without the oracle, all four input amplitudes are +½ and their mean is ½. Boost gives 2 × ½ − ½ = ½ for each key. All probabilities stay 25%.',
+      full: `In this ideal four-key, one-solution example, one full Grover round gives ${model.target} probability 100%. h remains |0⟩. The result is special to this problem size and number of solutions; more general searches need a suitable number of iterations.`
+    }[mode];
   }
   function renderAll() {
     preserveFocus(() => { renderWalkthrough(); renderChecker(); renderChallenges(); renderInterference(); renderMath(); renderMeasurements(); });
   }
   function measure(count) {
+    if (stage !== 6) return;
     const state = E.experimentState(model, mode);
     let last;
     for (let i = 0; i < count; i++) { last = E.sample(state); trials[mode][last]++; }
-    lastResults[mode] = count === 1 ? `Measured key: ${KEYS[last]}. This was one fresh run.` : '100 fresh runs measured. See the counts below.';
+    lastResults[mode] = count === 1 ? `Measured key: ${KEYS[last]}. One fresh run.` : '100 fresh runs measured. See the counts below.';
     renderMeasurements();
   }
 
-  $('stage-nav').innerHTML = STAGES.map((step, i) => `<button id="stage-${i}" type="button" data-stage="${i}" class="${i >= 3 && i <= 5 ? 'oracle-step' : ''}"><span class="step-number">${i === 0 ? 'RESET STATE' : `STEP ${i}`}</span>${step.short}</button>`).join('');
+  $('stage-nav').innerHTML = STAGES.map((step, i) => `<button id="stage-${i}" type="button" data-stage="${i}" class="${i >= 3 && i <= 5 ? 'oracle-step' : ''}"><span class="step-number">${i === 0 ? 'INITIAL STATE' : `STEP ${i}`}</span>${step.short}</button>`).join('');
   $('math-row').innerHTML = E.BASIS.map((bits, i) => `<option value="${i}">${ket(bits)}</option>`).join('');
-  $('required-a').addEventListener('change', resetRound);
-  $('required-b').addEventListener('change', resetRound);
-  $('reset').addEventListener('click', resetRound);
+  $('required-a').addEventListener('change', resetRound); $('required-b').addEventListener('change', resetRound); $('reset').addEventListener('click', resetRound);
   $('back').addEventListener('click', () => goTo(stage - 1));
   $('next').addEventListener('click', () => {
-    if (stage < 6) goTo(stage + 1);
-    else { $('measurement-panel').scrollIntoView({ behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth', block: 'start' }); $('measure-one').focus({ preventScroll: true }); }
+    if (stage === 5) scrollTo('reflection-title', 'mirror-key');
+    else if (stage === 6) scrollTo('measurement-panel', 'measure-one');
+    else goTo(stage + 1);
   });
   $('stage-nav').addEventListener('click', event => { const button = event.target.closest('button[data-stage]'); if (button) goTo(Number(button.dataset.stage)); });
   $('candidate-cards').addEventListener('click', event => { const button = event.target.closest('button[data-key]'); if (button) selectCandidate(Number(button.dataset.key)); });
   $('truth-rows').addEventListener('click', event => { const row = event.target.closest('tr[data-key]'); if (row) selectCandidate(Number(row.dataset.key)); });
   $('test-key').addEventListener('click', () => { classicalTest = selected; renderChecker(); });
+  $('demo-helper').addEventListener('change', () => { resetDemo(); renderDemo(); });
+  $('demo-reset').addEventListener('click', () => { resetDemo(); renderDemo(); });
+  $('demo-check').addEventListener('click', () => {
+    const key = KEYS[selected], f = E.predicate(key, model.requiredA, model.requiredB), before = demoHelper;
+    demoHelper ^= f; demoSteps++;
+    demoMessage = `Check ${demoSteps}: ${ket(key + before)} → ${ket(key + demoHelper)}. h: ${before} ⊕ ${f} = ${demoHelper}. A and B’s label values are unchanged.${demoSteps % 2 === 0 ? ' Two checks restore the starting helper value.' : ''}`; renderDemo();
+  });
   $('phase-question').addEventListener('click', event => {
-    const button = event.target.closest('button[data-answer]');
-    if (!button) return;
-    phaseAnswer = button.dataset.answer;
-    if (phaseAnswer === 'phase') phasePoint = true;
-    renderChallenges();
+    const button = event.target.closest('button[data-answer]'); if (!button || stage !== 3) return;
+    phaseAnswer = button.dataset.answer; if (phaseAnswer === 'phase') phasePoint = true; renderChallenges();
   });
-  $('prediction').addEventListener('input', () => {
-    prediction = Number($('prediction').value);
-    delete reflectionMessages[selected];
-    renderMirror();
-  });
+  $('apply-phase').addEventListener('click', () => { if (stage === 3) goTo(4); });
+  $('return-to-phase').addEventListener('click', () => { goTo(3); scrollTo('phase-question', 'phase-answer'); });
+  $('prediction').addEventListener('input', () => { if (stage !== 5) return; prediction = Number($('prediction').value); delete reflectionMessages[selected]; renderMirror(); });
   $('check-prediction').addEventListener('click', () => {
-    if (stage < 5) return;
+    if (stage !== 5) return;
     const input = searchMarked(), expected = E.reflection(input).output[selected], correct = Math.abs(prediction - expected) < 1e-10;
     if (correct) reflectionPoints.add(selected);
-    reflectionMessages[selected] = { correct, text: `${correct ? 'Correct.' : 'Try the reflection rule.'} For ${ket(KEYS[selected])}: 2 × ¼ − (${exact(input[selected], true)}) = ${exact(expected, true)}. ${correct ? 'That is the reflected amplitude.' : 'Move your prediction to that amplitude, then check again.'}` };
+    reflectionMessages[selected] = { correct, text: correct ? `Correct. For ${ket(KEYS[selected])}: 2 × ¼ − (${exact(input[selected], true)}) = ${exact(expected, true)}.` : `Try again. Use 2 × mean − input, with mean = ¼ and input = ${exact(input[selected], true)}. ${input[selected] < 0 ? 'Subtracting a negative adds its magnitude.' : 'Double the mean before subtracting the input.'}` };
     renderChallenges();
   });
-  $('reveal-boost').addEventListener('click', () => goTo(6));
+  $('reveal-boost').addEventListener('click', () => { if (stage === 5) goTo(6); });
+  $('return-to-prediction').addEventListener('click', () => { goTo(5); scrollTo('reflection-title', 'mirror-key'); });
+  $('mirror-key').addEventListener('change', () => selectCandidate(KEYS.indexOf($('mirror-key').value)));
   $('interference-key').addEventListener('change', () => selectCandidate(KEYS.indexOf($('interference-key').value)));
   $('math-row').addEventListener('change', () => { mathRow = Number($('math-row').value); renderMath(); });
-  $('experiment-options').addEventListener('click', event => { const button = event.target.closest('button[data-mode]'); if (button) { mode = button.dataset.mode; renderMeasurements(); } });
-  $('measure-one').addEventListener('click', () => measure(1));
-  $('measure-many').addEventListener('click', () => measure(100));
-  $('clear-trials').addEventListener('click', () => { trials[mode] = [0, 0, 0, 0]; lastResults[mode] = ''; renderMeasurements(); });
+  $('experiment-options').addEventListener('click', event => { const button = event.target.closest('button[data-mode]'); if (button && stage === 6) { mode = button.dataset.mode; renderMeasurements(); } });
+  $('measure-one').addEventListener('click', () => measure(1)); $('measure-many').addEventListener('click', () => measure(100));
+  $('clear-trials').addEventListener('click', () => { if (stage !== 6) return; trials[mode] = [0, 0, 0, 0]; lastResults[mode] = ''; renderMeasurements(); });
   resetRound();
 })();
 
